@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CRNotifications" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i48-R5-0AR">
+                                <rect key="frame" x="150" y="318" width="76" height="30"/>
+                                <state key="normal" title="Show error"/>
+                                <connections>
+                                    <action selector="showError:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qR3-WY-8rT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH0-uo-A2x">
+                                <rect key="frame" x="138" y="228" width="98" height="30"/>
+                                <state key="normal" title="Show success"/>
+                                <connections>
+                                    <action selector="showSuccess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b5q-2Q-u3E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4B-VL-ogg">
+                                <rect key="frame" x="154" y="408" width="68" height="30"/>
+                                <state key="normal" title="Show info"/>
+                                <connections>
+                                    <action selector="showInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0F7-yG-2rg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="i48-R5-0AR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5go-4j-WZe"/>
+                            <constraint firstItem="d4B-VL-ogg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="96u-dy-my2"/>
+                            <constraint firstItem="VH0-uo-A2x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R76-q6-Zkw"/>
+                            <constraint firstItem="i48-R5-0AR" firstAttribute="top" secondItem="VH0-uo-A2x" secondAttribute="bottom" constant="60" id="VhZ-Dk-Z1I"/>
+                            <constraint firstItem="i48-R5-0AR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h90-dx-Fsh"/>
+                            <constraint firstItem="d4B-VL-ogg" firstAttribute="top" secondItem="i48-R5-0AR" secondAttribute="bottom" constant="60" id="rB0-1T-9GM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
