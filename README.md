@@ -15,4 +15,4 @@ Notification types are
 ```.info```
 
 ### Installation
-Drag the *Classes* folder into your project and you are good to go.
+Drag the *CRNotifications* folder into your project and you are good to go.
