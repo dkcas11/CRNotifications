@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF4AA2CA1E831B6500BE9043 /* CRNotificationsMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4AA2C91E831B6500BE9043 /* CRNotificationsMedia.xcassets */; };
 		AF9017931E817E2600F4D8F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017921E817E2600F4D8F8 /* AppDelegate.swift */; };
 		AF9017951E817E2600F4D8F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017941E817E2600F4D8F8 /* ViewController.swift */; };
 		AF9017981E817E2600F4D8F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9017961E817E2600F4D8F8 /* Main.storyboard */; };
 		AF90179A1E817E2600F4D8F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF9017991E817E2600F4D8F8 /* Assets.xcassets */; };
 		AF90179D1E817E2600F4D8F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF90179B1E817E2600F4D8F8 /* LaunchScreen.storyboard */; };
-		AF9017B71E817FDB00F4D8F8 /* error.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AF9017AF1E817FDB00F4D8F8 /* error.pdf */; };
-		AF9017B81E817FDB00F4D8F8 /* info.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AF9017B01E817FDB00F4D8F8 /* info.pdf */; };
-		AF9017B91E817FDB00F4D8F8 /* success.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AF9017B11E817FDB00F4D8F8 /* success.pdf */; };
 		AF9017BA1E817FDB00F4D8F8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017B31E817FDB00F4D8F8 /* Colors.swift */; };
 		AF9017BB1E817FDB00F4D8F8 /* CRNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017B41E817FDB00F4D8F8 /* CRNotification.swift */; };
 		AF9017BC1E817FDB00F4D8F8 /* CRNotification.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF9017B51E817FDB00F4D8F8 /* CRNotification.xib */; };
@@ -22,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF4AA2C91E831B6500BE9043 /* CRNotificationsMedia.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CRNotificationsMedia.xcassets; sourceTree = "<group>"; };
 		AF90178F1E817E2600F4D8F8 /* CRNotificationsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRNotificationsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9017921E817E2600F4D8F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF9017941E817E2600F4D8F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,9 +28,6 @@
 		AF9017991E817E2600F4D8F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF90179C1E817E2600F4D8F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF90179E1E817E2600F4D8F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF9017AF1E817FDB00F4D8F8 /* error.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = error.pdf; sourceTree = "<group>"; };
-		AF9017B01E817FDB00F4D8F8 /* info.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = info.pdf; sourceTree = "<group>"; };
-		AF9017B11E817FDB00F4D8F8 /* success.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = success.pdf; sourceTree = "<group>"; };
 		AF9017B31E817FDB00F4D8F8 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		AF9017B41E817FDB00F4D8F8 /* CRNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRNotification.swift; sourceTree = "<group>"; };
 		AF9017B51E817FDB00F4D8F8 /* CRNotification.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRNotification.xib; sourceTree = "<group>"; };
@@ -91,9 +87,7 @@
 		AF9017AE1E817FDB00F4D8F8 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				AF9017AF1E817FDB00F4D8F8 /* error.pdf */,
-				AF9017B01E817FDB00F4D8F8 /* info.pdf */,
-				AF9017B11E817FDB00F4D8F8 /* success.pdf */,
+				AF4AA2C91E831B6500BE9043 /* CRNotificationsMedia.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -169,13 +163,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF4AA2CA1E831B6500BE9043 /* CRNotificationsMedia.xcassets in Resources */,
 				AF90179D1E817E2600F4D8F8 /* LaunchScreen.storyboard in Resources */,
 				AF90179A1E817E2600F4D8F8 /* Assets.xcassets in Resources */,
 				AF9017BC1E817FDB00F4D8F8 /* CRNotification.xib in Resources */,
 				AF9017981E817E2600F4D8F8 /* Main.storyboard in Resources */,
-				AF9017B71E817FDB00F4D8F8 /* error.pdf in Resources */,
-				AF9017B91E817FDB00F4D8F8 /* success.pdf in Resources */,
-				AF9017B81E817FDB00F4D8F8 /* info.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
