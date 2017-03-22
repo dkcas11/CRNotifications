@@ -15,6 +15,4 @@ Notification types are
 ```.info```
 
 ### Installation
-Drag the *Classes* folder into your project. Then add each image named with their filename as a single scale image with rendering as template.
-
-![alt text](http://i831.photobucket.com/albums/zz237/dkcas11/settings.jpg "Info")
+Drag the *Classes* folder into your project and you are good to go.
