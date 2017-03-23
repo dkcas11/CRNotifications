@@ -92,7 +92,9 @@ class CRNotification: UIView {
 			(complete: Bool) in
 			UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions(), animations: {
 				self.center.y = -self.frame.height
-			}, completion: nil)
+			}, completion: { (complete) in
+				self.removeFromSuperview()
+			})
 		})
 	}
 }
