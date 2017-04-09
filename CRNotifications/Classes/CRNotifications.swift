@@ -19,7 +19,7 @@ class CRNotifications {
 
 	/// Shows a CRNotification
 	static func showNotification(type: CRNotificationType, title: String, message: String, dismissDelay: Int) {
-		let view = CRNotification.instanceFromNib() as! CRNotification
+		let view = CRNotification()
 		var color = UIColor.black
 		var image = UIImage(named: "success")
 		

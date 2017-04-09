@@ -15,7 +15,6 @@
 		AF90179D1E817E2600F4D8F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF90179B1E817E2600F4D8F8 /* LaunchScreen.storyboard */; };
 		AF9017BA1E817FDB00F4D8F8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017B31E817FDB00F4D8F8 /* Colors.swift */; };
 		AF9017BB1E817FDB00F4D8F8 /* CRNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017B41E817FDB00F4D8F8 /* CRNotification.swift */; };
-		AF9017BC1E817FDB00F4D8F8 /* CRNotification.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF9017B51E817FDB00F4D8F8 /* CRNotification.xib */; };
 		AF9017BD1E817FDB00F4D8F8 /* CRNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017B61E817FDB00F4D8F8 /* CRNotifications.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,6 @@
 		AF90179E1E817E2600F4D8F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF9017B31E817FDB00F4D8F8 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		AF9017B41E817FDB00F4D8F8 /* CRNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRNotification.swift; sourceTree = "<group>"; };
-		AF9017B51E817FDB00F4D8F8 /* CRNotification.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRNotification.xib; sourceTree = "<group>"; };
 		AF9017B61E817FDB00F4D8F8 /* CRNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRNotifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +95,6 @@
 			children = (
 				AF9017B31E817FDB00F4D8F8 /* Colors.swift */,
 				AF9017B41E817FDB00F4D8F8 /* CRNotification.swift */,
-				AF9017B51E817FDB00F4D8F8 /* CRNotification.xib */,
 				AF9017B61E817FDB00F4D8F8 /* CRNotifications.swift */,
 			);
 			path = Classes;
@@ -166,7 +163,6 @@
 				AF4AA2CA1E831B6500BE9043 /* CRNotificationsMedia.xcassets in Resources */,
 				AF90179D1E817E2600F4D8F8 /* LaunchScreen.storyboard in Resources */,
 				AF90179A1E817E2600F4D8F8 /* Assets.xcassets in Resources */,
-				AF9017BC1E817FDB00F4D8F8 /* CRNotification.xib in Resources */,
 				AF9017981E817E2600F4D8F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
