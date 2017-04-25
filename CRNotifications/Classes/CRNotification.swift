@@ -27,6 +27,7 @@ class CRNotification: UIView {
 		view.backgroundColor = .clear
 		view.textColor = .white
 		view.textContainerInset = UIEdgeInsets(top: -4, left: -5, bottom: 0, right: 0)
+		view.isUserInteractionEnabled = false
 		return view
 	}()
 	
@@ -98,18 +99,14 @@ class CRNotification: UIView {
 	
 	/// Animates in the notification
 	func showNotification() {
-		UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions(), animations: {
-			self.frame.origin.y = UIApplication.shared.statusBarFrame.height + (self.frame.height * 0.1) + 5
-			}, completion: {
-				(complete: Bool) in
-				UIView.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions(), animations: {
-					self.frame.origin.y = self.frame.origin.y - 5
-				})
+		UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.1, options: UIViewAnimationOptions(), animations: {
+			self.frame.origin.y = UIApplication.shared.statusBarFrame.height + (self.frame.height * 0.1)
 		})
 	}
 	
 	/// Animates out the notification
 	func dismissNotification() {
+		
 		UIView.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions(), animations: {
 			self.frame.origin.y = self.frame.origin.y + 5
 		}, completion: {
