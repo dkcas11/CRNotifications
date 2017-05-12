@@ -21,7 +21,7 @@ class CRNotification: UIView {
 		label.textColor = .white
 		return label
 	}()
-	var messageView: UITextView = {
+	public fileprivate(set) lazy var messageView: UITextView = {
 		let view = UITextView()
 		view.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightSemibold)
 		view.backgroundColor = .clear
