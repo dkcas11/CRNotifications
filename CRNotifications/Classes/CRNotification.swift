@@ -31,48 +31,69 @@ class CRNotification: UIView {
 		return view
 	}()
 	
-	override init(frame: CGRect) {
+	init() {
 		let width = UIScreen.main.bounds.width * 0.9
 		let height = (65 / 337) * width
 		super.init(frame: CGRect(x: 0, y: -height, width: width, height: height))
 		center.x = UIScreen.main.bounds.width/2
 		
+		setupLayer()
+		setupSubviews()
+		setupConstraints()
+		setupTargets()
+	}
+	
+	func setupLayer() {
 		layer.cornerRadius = 5
 		layer.shadowRadius = 5
 		layer.shadowOpacity = 0.25
 		layer.shadowColor = UIColor.lightGray.cgColor
-		
+	}
+	
+	func setupSubviews() {
 		addSubview(imageView)
 		addSubview(titleLabel)
 		addSubview(messageView)
-		
-		imageView.translatesAutoresizingMaskIntoConstraints = false
-		imageView.topAnchor.constraint(equalTo: imageView.superview!.topAnchor, constant: 12).isActive = true
-		imageView.leadingAnchor.constraint(equalTo: imageView.superview!.leadingAnchor, constant: 12).isActive = true
-		imageView.bottomAnchor.constraint(equalTo: imageView.superview!.bottomAnchor, constant: -12).isActive = true
-		imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor).isActive = true
-
-		titleLabel.translatesAutoresizingMaskIntoConstraints = false
-		titleLabel.topAnchor.constraint(equalTo: titleLabel.superview!.topAnchor).isActive = true
-		titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8).isActive = true
-		titleLabel.trailingAnchor.constraint(equalTo: titleLabel.superview!.trailingAnchor, constant: -8).isActive = true
-		titleLabel.bottomAnchor.constraint(equalTo: titleLabel.superview!.centerYAnchor, constant: -2).isActive = true
-
-		messageView.translatesAutoresizingMaskIntoConstraints = false
-		messageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: -2).isActive = true
-		messageView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
-		messageView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
-		messageView.bottomAnchor.constraint(equalTo: messageView.superview!.bottomAnchor, constant: -2).isActive = true
-		
-		let dismissRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissNotification))
-		addGestureRecognizer(dismissRecognizer)
-		
-		showNotification()
 	}
 	
-	/// Required init for nib loading
-	required public init?(coder aDecoder:NSCoder) {
-		super.init(coder: aDecoder)
+	func setupConstraints() {
+		imageView.translatesAutoresizingMaskIntoConstraints = false
+		messageView.translatesAutoresizingMaskIntoConstraints = false
+		titleLabel.translatesAutoresizingMaskIntoConstraints = false
+		
+		NSLayoutConstraint.activate([
+			imageView.topAnchor.constraint(equalTo: imageView.superview!.topAnchor, constant: 12),
+			imageView.leadingAnchor.constraint(equalTo: imageView.superview!.leadingAnchor, constant: 12),
+			imageView.bottomAnchor.constraint(equalTo: imageView.superview!.bottomAnchor, constant: -12),
+			imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
+			])
+		
+		NSLayoutConstraint.activate([
+			titleLabel.topAnchor.constraint(equalTo: titleLabel.superview!.topAnchor),
+			titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
+			titleLabel.trailingAnchor.constraint(equalTo: titleLabel.superview!.trailingAnchor, constant: -8),
+			titleLabel.bottomAnchor.constraint(equalTo: titleLabel.superview!.centerYAnchor, constant: -2)
+			])
+		
+		NSLayoutConstraint.activate([
+			messageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: -2),
+			messageView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+			messageView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+			messageView.bottomAnchor.constraint(equalTo: messageView.superview!.bottomAnchor, constant: -2)
+			])
+	}
+	
+	func setupTargets() {
+		let dismissRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissNotification))
+		addGestureRecognizer(dismissRecognizer)
+	}
+	
+	/// Required init for nib loading (nib loading is not supported)
+	required public init?(coder aDecoder:NSCoder) { fatalError("Not implemented.") }
+	
+	/// Sets the background color of the notification
+	func setBackgroundColor(color: UIColor) {
+		backgroundColor = color
 	}
 	
 	/// Sets the title of the notification
@@ -91,7 +112,7 @@ class CRNotification: UIView {
 	}
 	
 	/// Dismisses the notification with a delay > 0
-	func setDismisTimer(delay: Int) {
+	func setDismisTimer(delay: TimeInterval) {
 		if delay > 0 {
 			Timer.scheduledTimer(timeInterval: Double(delay), target: self, selector: #selector(dismissNotification), userInfo: nil, repeats: false)
 		}
@@ -100,13 +121,12 @@ class CRNotification: UIView {
 	/// Animates in the notification
 	func showNotification() {
 		UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.1, options: UIViewAnimationOptions(), animations: {
-			self.frame.origin.y = UIApplication.shared.statusBarFrame.height + (self.frame.height * 0.1)
+			self.frame.origin.y = UIApplication.shared.statusBarFrame.height * 1.5
 		})
 	}
 	
 	/// Animates out the notification
 	func dismissNotification() {
-		
 		UIView.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions(), animations: {
 			self.frame.origin.y = self.frame.origin.y + 5
 		}, completion: {

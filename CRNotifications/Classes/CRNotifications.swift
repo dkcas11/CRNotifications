@@ -15,31 +15,30 @@ class CRNotifications {
 		case success
 		case error
 		case info
+		
+		var color: UIColor {
+			switch self {
+			case .success: return UIColor.flatGreen
+			case .error: return UIColor.flatRed
+			case .info: return UIColor.flatGray
+			}
+		}
+		
+		var image: UIImage {
+			switch self {
+			case .success: return UIImage(named: "success")!
+			case .error: return UIImage(named: "error")!
+			case .info: return UIImage(named: "info")!
+			}
+		}
 	}
 
 	/// Shows a CRNotification
-	static func showNotification(type: CRNotificationType, title: String, message: String, dismissDelay: Int) {
+	static func showNotification(type: CRNotificationType, title: String, message: String, dismissDelay: TimeInterval) {
 		let view = CRNotification()
-		var color = UIColor.black
-		var image = UIImage(named: "success")
 		
-		switch type {
-		case .success:
-			color = .flatGreen
-			image = UIImage(named: "success")
-			break
-		case .error:
-			color = .flatRed
-			image = UIImage(named: "error")
-			break
-		case .info:
-			color = .flatGray
-			image = UIImage(named: "info")
-			break
-		}
-		
-		view.backgroundColor = color
-		view.setImage(image: image!)
+		view.setBackgroundColor(color: type.color)
+		view.setImage(image: type.image)
 		view.setTitle(title: title)
 		view.setMessage(message: message)
 		view.setDismisTimer(delay: dismissDelay)
