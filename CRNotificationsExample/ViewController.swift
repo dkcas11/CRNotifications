@@ -27,4 +27,8 @@ class ViewController: UIViewController {
 		CRNotifications.showNotification(type: .info, title: "Did you know?", message: "This notification will dismiss itself in 3 seconds.", dismissDelay: 3)
 	}
 	
+	@IBAction func nextViewControllerButton(_ sender: Any) {
+		navigationController?.pushViewController(PushViewController(), animated: true)
+	}
+	
 }

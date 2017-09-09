@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF4AA2CA1E831B6500BE9043 /* CRNotificationsMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4AA2C91E831B6500BE9043 /* CRNotificationsMedia.xcassets */; };
+		AF3C46C71F0EB36300CA7DE8 /* PushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3C46C61F0EB36300CA7DE8 /* PushViewController.swift */; };
 		AF9017931E817E2600F4D8F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017921E817E2600F4D8F8 /* AppDelegate.swift */; };
 		AF9017951E817E2600F4D8F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017941E817E2600F4D8F8 /* ViewController.swift */; };
 		AF9017981E817E2600F4D8F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9017961E817E2600F4D8F8 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF3C46C61F0EB36300CA7DE8 /* PushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushViewController.swift; sourceTree = "<group>"; };
 		AF4AA2C91E831B6500BE9043 /* CRNotificationsMedia.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CRNotificationsMedia.xcassets; sourceTree = "<group>"; };
 		AF90178F1E817E2600F4D8F8 /* CRNotificationsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRNotificationsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9017921E817E2600F4D8F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				AF9017AD1E817FDB00F4D8F8 /* CRNotifications */,
 				AF9017921E817E2600F4D8F8 /* AppDelegate.swift */,
 				AF9017941E817E2600F4D8F8 /* ViewController.swift */,
+				AF3C46C61F0EB36300CA7DE8 /* PushViewController.swift */,
 				AF9017961E817E2600F4D8F8 /* Main.storyboard */,
 				AF9017991E817E2600F4D8F8 /* Assets.xcassets */,
 				AF90179B1E817E2600F4D8F8 /* LaunchScreen.storyboard */,
@@ -179,6 +182,7 @@
 				AF9017931E817E2600F4D8F8 /* AppDelegate.swift in Sources */,
 				AF9017BD1E817FDB00F4D8F8 /* CRNotifications.swift in Sources */,
 				AF9017BB1E817FDB00F4D8F8 /* CRNotification.swift in Sources */,
+				AF3C46C71F0EB36300CA7DE8 /* PushViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
