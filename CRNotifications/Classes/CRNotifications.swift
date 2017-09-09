@@ -43,6 +43,11 @@ class CRNotifications {
 		view.setMessage(message: message)
 		view.setDismisTimer(delay: dismissDelay)
 
-		UIApplication.shared.keyWindow?.rootViewController?.view.addSubview(view)
+		guard let window = UIApplication.shared.keyWindow else {
+			print("Failed to show CRNotification. No keywindow available.")
+			return
+		}
+		window.addSubview(view)
+		view.showNotification()
 	}
 }
