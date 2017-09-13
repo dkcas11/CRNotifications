@@ -35,7 +35,7 @@ CRNotifications.showNotification(type: .success, title: "Success!", message: "Yo
 #### [Cocoapods install](https://cocoapods.org/?q=CRNotifications "Visit website")
 
 ```
-pod 'CRNotifications'
+pod 'CRNotifications', :git => 'https://github.com/dkcas11/CRNotifications.git'
 ```
 #### Manual install
 Drag the *CRNotifications* folder into your project and you are good to go.
