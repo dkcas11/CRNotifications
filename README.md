@@ -38,14 +38,14 @@ Drag the *CRNotifications* folder into your project and you are good to go.
 -------
 
 **Casper Riboe** 
-> Facebook : [Casper Riboe](http://facebook.com/dkcas11)
-> Twitter  : [dkcas11](http://twitter.com/dkcas11)
+> Facebook : [Casper Riboe](http://facebook.com/dkcas11) <br/>
+> Twitter  : [dkcas11](http://twitter.com/dkcas11) <br/>
 > Mail     : [casper2602@hotmail.com](mailto:casper260@hotmail.com)
 
 **Herrick Wolber**
 > Twitter : [estar2005](http://twitter.com/estar2005)<br/>
-> Github  : [Rico237](https://github.com/rico237)
->   Mail    : [wolbereric@yahoo.fr](mailto:wolbereric@yahoo.fr)
+> Github  : [Rico237](https://github.com/rico237) <br/>
+> Mail    : [wolbereric@yahoo.fr](mailto:wolbereric@yahoo.fr)
 
 
 
