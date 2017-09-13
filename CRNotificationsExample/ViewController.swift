@@ -31,5 +31,4 @@ class ViewController: UIViewController {
 	@IBAction func nextViewControllerButton(_ sender: Any) {
 		navigationController?.pushViewController(PushViewController(), animated: true)
 	}
-	
 }

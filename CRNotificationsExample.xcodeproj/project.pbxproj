@@ -126,7 +126,6 @@
 				TargetAttributes = {
 					AF90178E1E817E2600F4D8F8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = X776XA45RM;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -170,7 +169,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CRNotificationsExample/Pods-CRNotificationsExample-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/CRNotifications/CRNotifications.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/CRNotifications/CRNotifications.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -348,7 +347,7 @@
 			baseConfigurationReference = D2CAA818C0A3DE60568E5D2C /* Pods-CRNotificationsExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = X776XA45RM;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CRNotificationsExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -363,7 +362,7 @@
 			baseConfigurationReference = 24193BC70B4C0025A0146E19 /* Pods-CRNotificationsExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = X776XA45RM;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CRNotificationsExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

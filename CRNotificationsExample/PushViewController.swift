@@ -21,5 +21,4 @@ class PushViewController: UIViewController {
 		
 		CRNotifications.showNotification(type: .success, title: "Pushed through!", message: "I'm right here.", dismissDelay: 3)
 	}
-	
 }
