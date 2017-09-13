@@ -32,7 +32,7 @@ CRNotifications.showNotification(type: .success, title: "Success!", message: "Yo
 ### Installation
 -------
 
-#### [Cocoapods install](https://cocoapods.org/?q=CRNotifications "Visit website")
+#### Cocoapods install
 
 ```
 pod 'CRNotifications', :git => 'https://github.com/dkcas11/CRNotifications.git'
