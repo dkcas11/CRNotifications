@@ -10,7 +10,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CRNotifications:
-    :commit: d71744a82f07b683c418a52779bc2c83bc0240e6
+    :commit: 0a3e3080fc6af2ca6b92abad38344a76fd732738
     :git: https://github.com/rico237/CRNotifications.git
 
 SPEC CHECKSUMS:
