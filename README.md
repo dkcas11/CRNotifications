@@ -43,9 +43,9 @@ Drag the *CRNotifications* folder into your project and you are good to go.
 > Mail     : [casper2602@hotmail.com](mailto:casper260@hotmail.com)
 
 **Herrick Wolber**
-> Twitter : [estar2005](http://twitter.com/estar2005)
+> Twitter : [estar2005](http://twitter.com/estar2005)<br/>
 > Github  : [Rico237](https://github.com/rico237)
-> Mail    : [wolbereric@yahoo.fr](mailto:wolbereric@yahoo.fr)
+>   Mail    : [wolbereric@yahoo.fr](mailto:wolbereric@yahoo.fr)
 
 
 
