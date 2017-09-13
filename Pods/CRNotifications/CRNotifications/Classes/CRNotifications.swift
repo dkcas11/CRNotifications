@@ -8,10 +8,12 @@
 
 import UIKit
 
-class CRNotifications {
+public class CRNotifications {
+    
+    public init() {}
 	
 	/// Enum for types of notifications
-	enum CRNotificationType {
+	public enum CRNotificationType {
 		case success
 		case error
 		case info
@@ -26,19 +28,26 @@ class CRNotifications {
 		
 		var image: UIImage {
 			switch self {
-			case .success: return UIImage(named: "success")!
+//			case .success: return UIImage(named: "success")!
 			case .error: return UIImage(named: "error")!
 			case .info: return UIImage(named: "info")!
+            default:
+                return UIImage()
 			}
 		}
 	}
 
 	/// Shows a CRNotification
-	static func showNotification(type: CRNotificationType, title: String, message: String, dismissDelay: TimeInterval) {
+    public func showNotification(type: CRNotificationType, title: String, message: String, dismissDelay: TimeInterval) {
 		let view = CRNotification()
 		
+        let image = UIImage(named:"success")
+        if image == nil{
+            print("Image null")
+        }
+        
 		view.setBackgroundColor(color: type.color)
-		view.setImage(image: type.image)
+//		view.setImage(image: type.image)
 		view.setTitle(title: title)
 		view.setMessage(message: message)
 		view.setDismisTimer(delay: dismissDelay)

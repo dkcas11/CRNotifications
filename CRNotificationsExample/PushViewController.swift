@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import CRNotifications
+import CRNotifications
 
 class PushViewController: UIViewController {
 	
@@ -19,7 +19,7 @@ class PushViewController: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
-		CRNotifications.showNotification(type: .success, title: "Pushed through!", message: "I'm right here.", dismissDelay: 3)
+//		CRNotifications.showNotification(type: .success, title: "Pushed through!", message: "I'm right here.", dismissDelay: 3)
 	}
 	
 }

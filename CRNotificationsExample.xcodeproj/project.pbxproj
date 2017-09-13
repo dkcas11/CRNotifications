@@ -8,20 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		AF3C46C71F0EB36300CA7DE8 /* PushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3C46C61F0EB36300CA7DE8 /* PushViewController.swift */; };
-		AF4AA2CA1E831B6500BE9043 /* CRNotificationsMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4AA2C91E831B6500BE9043 /* CRNotificationsMedia.xcassets */; };
 		AF9017931E817E2600F4D8F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017921E817E2600F4D8F8 /* AppDelegate.swift */; };
 		AF9017951E817E2600F4D8F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017941E817E2600F4D8F8 /* ViewController.swift */; };
 		AF9017981E817E2600F4D8F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9017961E817E2600F4D8F8 /* Main.storyboard */; };
 		AF90179A1E817E2600F4D8F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF9017991E817E2600F4D8F8 /* Assets.xcassets */; };
 		AF90179D1E817E2600F4D8F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF90179B1E817E2600F4D8F8 /* LaunchScreen.storyboard */; };
-		AF9017BA1E817FDB00F4D8F8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017B31E817FDB00F4D8F8 /* Colors.swift */; };
-		AF9017BB1E817FDB00F4D8F8 /* CRNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017B41E817FDB00F4D8F8 /* CRNotification.swift */; };
-		AF9017BD1E817FDB00F4D8F8 /* CRNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017B61E817FDB00F4D8F8 /* CRNotifications.swift */; };
+		D90AEE06CBB9C4139E66E352 /* Pods_CRNotificationsExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D27ADE23DCD735C2E86A31F /* Pods_CRNotificationsExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24193BC70B4C0025A0146E19 /* Pods-CRNotificationsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRNotificationsExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRNotificationsExample/Pods-CRNotificationsExample.release.xcconfig"; sourceTree = "<group>"; };
+		3D27ADE23DCD735C2E86A31F /* Pods_CRNotificationsExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRNotificationsExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3C46C61F0EB36300CA7DE8 /* PushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushViewController.swift; sourceTree = "<group>"; };
-		AF4AA2C91E831B6500BE9043 /* CRNotificationsMedia.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CRNotificationsMedia.xcassets; sourceTree = "<group>"; };
 		AF90178F1E817E2600F4D8F8 /* CRNotificationsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRNotificationsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9017921E817E2600F4D8F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF9017941E817E2600F4D8F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,9 +27,7 @@
 		AF9017991E817E2600F4D8F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF90179C1E817E2600F4D8F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF90179E1E817E2600F4D8F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF9017B31E817FDB00F4D8F8 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		AF9017B41E817FDB00F4D8F8 /* CRNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRNotification.swift; sourceTree = "<group>"; };
-		AF9017B61E817FDB00F4D8F8 /* CRNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRNotifications.swift; sourceTree = "<group>"; };
+		D2CAA818C0A3DE60568E5D2C /* Pods-CRNotificationsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRNotificationsExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CRNotificationsExample/Pods-CRNotificationsExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90AEE06CBB9C4139E66E352 /* Pods_CRNotificationsExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78F32DF0E667DFF8F84F5FA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D27ADE23DCD735C2E86A31F /* Pods_CRNotificationsExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AF9017861E817E2600F4D8F8 = {
 			isa = PBXGroup;
 			children = (
 				AF9017911E817E2600F4D8F8 /* CRNotificationsExample */,
 				AF9017901E817E2600F4D8F8 /* Products */,
+				D2707F3046572918B8625C2D /* Pods */,
+				78F32DF0E667DFF8F84F5FA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,7 +71,6 @@
 		AF9017911E817E2600F4D8F8 /* CRNotificationsExample */ = {
 			isa = PBXGroup;
 			children = (
-				AF9017AD1E817FDB00F4D8F8 /* CRNotifications */,
 				AF9017921E817E2600F4D8F8 /* AppDelegate.swift */,
 				AF9017941E817E2600F4D8F8 /* ViewController.swift */,
 				AF3C46C61F0EB36300CA7DE8 /* PushViewController.swift */,
@@ -76,31 +82,13 @@
 			path = CRNotificationsExample;
 			sourceTree = "<group>";
 		};
-		AF9017AD1E817FDB00F4D8F8 /* CRNotifications */ = {
+		D2707F3046572918B8625C2D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AF9017AE1E817FDB00F4D8F8 /* Assets */,
-				AF9017B21E817FDB00F4D8F8 /* Classes */,
+				D2CAA818C0A3DE60568E5D2C /* Pods-CRNotificationsExample.debug.xcconfig */,
+				24193BC70B4C0025A0146E19 /* Pods-CRNotificationsExample.release.xcconfig */,
 			);
-			path = CRNotifications;
-			sourceTree = SOURCE_ROOT;
-		};
-		AF9017AE1E817FDB00F4D8F8 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				AF4AA2C91E831B6500BE9043 /* CRNotificationsMedia.xcassets */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		AF9017B21E817FDB00F4D8F8 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				AF9017B31E817FDB00F4D8F8 /* Colors.swift */,
-				AF9017B41E817FDB00F4D8F8 /* CRNotification.swift */,
-				AF9017B61E817FDB00F4D8F8 /* CRNotifications.swift */,
-			);
-			path = Classes;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF9017A11E817E2600F4D8F8 /* Build configuration list for PBXNativeTarget "CRNotificationsExample" */;
 			buildPhases = (
+				61B22BA6B5319D40E885C837 /* [CP] Check Pods Manifest.lock */,
 				AF90178B1E817E2600F4D8F8 /* Sources */,
 				AF90178C1E817E2600F4D8F8 /* Frameworks */,
 				AF90178D1E817E2600F4D8F8 /* Resources */,
+				3E3E8CA4FFE01341935D484E /* [CP] Embed Pods Frameworks */,
+				177AA681854FBAA1E77B5C0B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,7 +154,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF4AA2CA1E831B6500BE9043 /* CRNotificationsMedia.xcassets in Resources */,
 				AF90179D1E817E2600F4D8F8 /* LaunchScreen.storyboard in Resources */,
 				AF90179A1E817E2600F4D8F8 /* Assets.xcassets in Resources */,
 				AF9017981E817E2600F4D8F8 /* Main.storyboard in Resources */,
@@ -172,16 +162,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		177AA681854FBAA1E77B5C0B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CRNotificationsExample/Pods-CRNotificationsExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E3E8CA4FFE01341935D484E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CRNotificationsExample/Pods-CRNotificationsExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CRNotifications/CRNotifications.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CRNotifications.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CRNotificationsExample/Pods-CRNotificationsExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61B22BA6B5319D40E885C837 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CRNotificationsExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AF90178B1E817E2600F4D8F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AF9017951E817E2600F4D8F8 /* ViewController.swift in Sources */,
-				AF9017BA1E817FDB00F4D8F8 /* Colors.swift in Sources */,
 				AF9017931E817E2600F4D8F8 /* AppDelegate.swift in Sources */,
-				AF9017BD1E817FDB00F4D8F8 /* CRNotifications.swift in Sources */,
-				AF9017BB1E817FDB00F4D8F8 /* CRNotification.swift in Sources */,
 				AF3C46C71F0EB36300CA7DE8 /* PushViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +342,7 @@
 		};
 		AF9017A21E817E2600F4D8F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2CAA818C0A3DE60568E5D2C /* Pods-CRNotificationsExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X776XA45RM;
@@ -315,6 +357,7 @@
 		};
 		AF9017A31E817E2600F4D8F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24193BC70B4C0025A0146E19 /* Pods-CRNotificationsExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X776XA45RM;
