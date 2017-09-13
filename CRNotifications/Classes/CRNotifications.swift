@@ -10,7 +10,7 @@ import UIKit
 
 public class CRNotifications {
     
-    	public init(){}
+    public init(){}
 	
 	/// Enum for types of notifications
 	public enum CRNotificationType {
@@ -27,7 +27,7 @@ public class CRNotifications {
 		}
 		
 		var image: UIImage {
-            		let bundle = Bundle(for: CRNotifications.self)
+            let bundle = Bundle(for: CRNotifications.self)
             
 			switch self {
 			case .success: return UIImage(named: "success", in: bundle, compatibleWith: nil)!
@@ -48,7 +48,7 @@ public class CRNotifications {
 		view.setDismisTimer(delay: dismissDelay)
 
 		guard let window = UIApplication.shared.keyWindow else {
-			print("Failed to show CRNotification. No keywindow available.")
+			print("Failed to show CRNotification. No keywindow available. ")
 			return
 		}
 		window.addSubview(view)
