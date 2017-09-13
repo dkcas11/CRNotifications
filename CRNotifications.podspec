@@ -31,7 +31,7 @@ Custom in-app notifications.
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'CRNotifications/Classes/**/*'
-  s.resources    = "*.xcassets"
+  s.resources    = "CRNotifications/Assets/*.xcassets"
 
   s.frameworks = 'UIKit'
 end
