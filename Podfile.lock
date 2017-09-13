@@ -10,12 +10,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CRNotifications:
-    :commit: 02f52d6c2543648817726f776aaccb301d9ed2fa
+    :commit: c1870579ae609cccbf6add2c0f3fe2ef8c6826a8
     :git: https://github.com/rico237/CRNotifications.git
 
 SPEC CHECKSUMS:
   CRNotifications: b32509334780b418455cdad73e8241fa2ff1be18
 
-PODFILE CHECKSUM: 253d1f2dca902715c070c39c49f8c533d2c184f6
+PODFILE CHECKSUM: 7600043081d9a2f56d54c2619665adf2fdf7ee6c
 
 COCOAPODS: 1.3.1
