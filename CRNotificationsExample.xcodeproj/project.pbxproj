@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF4AA2CA1E831B6500BE9043 /* CRNotificationsMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4AA2C91E831B6500BE9043 /* CRNotificationsMedia.xcassets */; };
 		AF3C46C71F0EB36300CA7DE8 /* PushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3C46C61F0EB36300CA7DE8 /* PushViewController.swift */; };
+		AF4AA2CA1E831B6500BE9043 /* CRNotificationsMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4AA2C91E831B6500BE9043 /* CRNotificationsMedia.xcassets */; };
 		AF9017931E817E2600F4D8F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017921E817E2600F4D8F8 /* AppDelegate.swift */; };
 		AF9017951E817E2600F4D8F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9017941E817E2600F4D8F8 /* ViewController.swift */; };
 		AF9017981E817E2600F4D8F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9017961E817E2600F4D8F8 /* Main.storyboard */; };
@@ -135,7 +135,7 @@
 				TargetAttributes = {
 					AF90178E1E817E2600F4D8F8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = SG4MLU2P43;
+						DevelopmentTeam = X776XA45RM;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -303,8 +303,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SG4MLU2P43;
+				DEVELOPMENT_TEAM = X776XA45RM;
 				INFOPLIST_FILE = CRNotificationsExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.casperriboe.CRNotificationsExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -316,8 +317,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SG4MLU2P43;
+				DEVELOPMENT_TEAM = X776XA45RM;
 				INFOPLIST_FILE = CRNotificationsExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.casperriboe.CRNotificationsExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
