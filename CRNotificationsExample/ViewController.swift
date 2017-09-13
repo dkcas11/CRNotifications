@@ -21,7 +21,6 @@ class ViewController: UIViewController {
 	@IBAction func showSuccess(_ sender: Any) {
 
         let notificationC = CRNotifications()
-        
         notificationC.showNotification(type: .success, title: "Success!", message: "You successfully showed this notification.", dismissDelay: 3)
         
 	}

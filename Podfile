@@ -6,5 +6,5 @@ target 'CRNotificationsExample' do
   use_frameworks!
 
   # Pods for CRNotificationsExample
-pod 'CRNotifications', :git => 'https://github.com/rico237/CRNotifications.git'
+  pod 'CRNotifications', :git => 'https://github.com/rico237/CRNotifications.git'
 end
