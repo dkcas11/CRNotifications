@@ -3,15 +3,17 @@
 //  CRNotifications
 //
 //  Created by Casper Riboe on 21/03/2017.
-//  Copyright © 2017 Criboe. All rights reserved.
+//  LICENSE : MIT
 //
 
 import UIKit
 
-class CRNotifications {
+public class CRNotifications {
+    
+    public init(){}
 	
 	/// Enum for types of notifications
-	enum CRNotificationType {
+	public enum CRNotificationType {
 		case success
 		case error
 		case info
@@ -25,18 +27,20 @@ class CRNotifications {
 		}
 		
 		var image: UIImage {
+            let bundle = Bundle(for: CRNotifications.self)
+            
 			switch self {
-			case .success: return UIImage(named: "success")!
-			case .error: return UIImage(named: "error")!
-			case .info: return UIImage(named: "info")!
+			case .success: return UIImage(named: "success", in: bundle, compatibleWith: nil)!
+			case .error: return UIImage(named: "error", in: bundle, compatibleWith: nil)!
+			case .info: return UIImage(named: "info", in: bundle, compatibleWith: nil)!
 			}
 		}
 	}
 
 	/// Shows a CRNotification
-	static func showNotification(type: CRNotificationType, title: String, message: String, dismissDelay: TimeInterval) {
+	public static func showNotification(type: CRNotificationType, title: String, message: String, dismissDelay: TimeInterval) {
 		let view = CRNotification()
-		
+
 		view.setBackgroundColor(color: type.color)
 		view.setImage(image: type.image)
 		view.setTitle(title: title)
@@ -44,7 +48,7 @@ class CRNotifications {
 		view.setDismisTimer(delay: dismissDelay)
 
 		guard let window = UIApplication.shared.keyWindow else {
-			print("Failed to show CRNotification. No keywindow available.")
+			print("Failed to show CRNotification. No keywindow available. ")
 			return
 		}
 		window.addSubview(view)

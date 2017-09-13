@@ -3,20 +3,21 @@
 //  CRNotifications
 //
 //  Created by Casper Riboe on 21/03/2017.
-//  Copyright © 2017 Criboe. All rights reserved.
+//  LICENSE : MIT
 //
 
 import UIKit
+import CRNotifications
 
 class ViewController: UIViewController {
-	
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
 	
 	/// Test buttons
 	@IBAction func showSuccess(_ sender: Any) {
-		CRNotifications.showNotification(type: .success, title: "Success!", message: "You successfully showed this notification.", dismissDelay: 3)
+        CRNotifications.showNotification(type: .success, title: "Success!", message: "You successfully showed this notification.", dismissDelay: 3)
 	}
 	
 	@IBAction func showError(_ sender: Any) {

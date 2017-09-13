@@ -1,0 +1,21 @@
+PODS:
+  - CRNotifications (1.0.4)
+
+DEPENDENCIES:
+  - CRNotifications (from `https://github.com/rico237/CRNotifications.git`)
+
+EXTERNAL SOURCES:
+  CRNotifications:
+    :git: https://github.com/rico237/CRNotifications.git
+
+CHECKOUT OPTIONS:
+  CRNotifications:
+    :commit: 0a3e3080fc6af2ca6b92abad38344a76fd732738
+    :git: https://github.com/rico237/CRNotifications.git
+
+SPEC CHECKSUMS:
+  CRNotifications: b32509334780b418455cdad73e8241fa2ff1be18
+
+PODFILE CHECKSUM: 7600043081d9a2f56d54c2619665adf2fdf7ee6c
+
+COCOAPODS: 1.3.1

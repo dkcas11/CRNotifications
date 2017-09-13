@@ -65,3 +65,8 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+CRNotificationsExample/.DS_Store
+CRNotifications/Classes/.DS_Store
+CRNotifications/Assets/.DS_Store
+CRNotifications/.DS_Store
+.DS_Store

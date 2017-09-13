@@ -1,0 +1,6 @@
+framework module CRNotifications {
+  umbrella header "CRNotifications-umbrella.h"
+
+  export *
+  module * { export * }
+}
