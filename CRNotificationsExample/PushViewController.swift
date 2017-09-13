@@ -3,7 +3,7 @@
 //  CRNotificationsExample
 //
 //  Created by Casper Riboe on 06/07/2017.
-//  Copyright © 2017 Criboe. All rights reserved.
+//  LICENSE : MIT
 //
 
 import UIKit
@@ -19,7 +19,7 @@ class PushViewController: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
-//		CRNotifications.showNotification(type: .success, title: "Pushed through!", message: "I'm right here.", dismissDelay: 3)
+		CRNotifications.showNotification(type: .success, title: "Pushed through!", message: "I'm right here.", dismissDelay: 3)
 	}
 	
 }

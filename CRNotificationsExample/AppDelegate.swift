@@ -3,7 +3,7 @@
 //  CRNotificationsExample
 //
 //  Created by Casper Riboe on 21/03/2017.
-//  Copyright © 2017 Criboe. All rights reserved.
+//  LICENSE : MIT
 //
 
 import UIKit
