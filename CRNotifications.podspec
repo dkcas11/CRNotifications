@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CRNotifications'
-  s.version          = '1.0.4'
+  s.version          = '1.1.0'
   s.summary          = 'Custom in-app notifications.'
 
   s.description      = <<-DESC
