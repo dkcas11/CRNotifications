@@ -10,9 +10,9 @@
 		0383532B8F1824534FE64113696BD355 /* Pods-CRNotificationsExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E6249BBBD159D90AE712697955E2328D /* Pods-CRNotificationsExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CF59D16B6DB992E8CBBC4573C84614B /* CRNotifications-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A51EA0B4B203423A9F6D9F709D6960C6 /* CRNotifications-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38AAC7EFC4FBC5D6EB3FF646667CE36F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16BBC431E75504EC0B40A5EB1B0146 /* Colors.swift */; };
-		69BDD7F7DE50E174DF041EA0FD3293FD /* CRNotificationsMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C82AC89F2905AF9CD68C1FC9A17DAAC2 /* CRNotificationsMedia.xcassets */; };
 		8811B43B3E69AF7F14F488D80ED55D77 /* CRNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4271710AF201A83A4CFC8F4C80180425 /* CRNotification.swift */; };
 		9C71B70FEB9750F34D2FDA40A7E5E867 /* Pods-CRNotificationsExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E43EE78DA3145551D7EECF8378340E9 /* Pods-CRNotificationsExample-dummy.m */; };
+		AF6FD2871F6A56F9009CF338 /* CRNotificationsMedia.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C82AC89F2905AF9CD68C1FC9A17DAAC2 /* CRNotificationsMedia.xcassets */; };
 		B4669038A572C637D4D06559E4D18A10 /* CRNotifications-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E07E5825F636876B724F606287DC7E /* CRNotifications-dummy.m */; };
 		E90B90C932A1834C85D09A439072B022 /* CRNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79068477E02843D1947263C31C4FCEBE /* CRNotifications.swift */; };
 		F5BA21874CA4227E394D6693ED88759D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
@@ -39,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		047703CB9B2832341964B06FB050FFFF /* Pods_CRNotificationsExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CRNotificationsExample.framework; path = "Pods-CRNotificationsExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		047703CB9B2832341964B06FB050FFFF /* Pods_CRNotificationsExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRNotificationsExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E569C799D3074BFFBBCCC00E50FA524 /* CRNotifications-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CRNotifications-prefix.pch"; sourceTree = "<group>"; };
 		0FA1BC1FCCA2F43E1F3B1CEE7AA08317 /* Pods-CRNotificationsExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CRNotificationsExample-frameworks.sh"; sourceTree = "<group>"; };
 		26E07E5825F636876B724F606287DC7E /* CRNotifications-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CRNotifications-dummy.m"; sourceTree = "<group>"; };
@@ -47,12 +47,12 @@
 		5B8B250FE4095BF3991124AC555E3711 /* Pods-CRNotificationsExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CRNotificationsExample-acknowledgements.plist"; sourceTree = "<group>"; };
 		5E43EE78DA3145551D7EECF8378340E9 /* Pods-CRNotificationsExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CRNotificationsExample-dummy.m"; sourceTree = "<group>"; };
 		603DBC359F4470675D6AFE2288D33CCF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62D06758BEC55CFAF8354101161AF27D /* CRNotifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CRNotifications.framework; path = CRNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62D06758BEC55CFAF8354101161AF27D /* CRNotifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CRNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79068477E02843D1947263C31C4FCEBE /* CRNotifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CRNotifications.swift; path = CRNotifications/Classes/CRNotifications.swift; sourceTree = "<group>"; };
-		816810701BAAFD2BA5EB627DC57CD35E /* CRNotifications.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CRNotifications.bundle; path = CRNotifications.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		816810701BAAFD2BA5EB627DC57CD35E /* CRNotifications.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRNotifications.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E16BBC431E75504EC0B40A5EB1B0146 /* Colors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = CRNotifications/Classes/Colors.swift; sourceTree = "<group>"; };
-		92B9ED81EEE4C40B38978711722687B2 /* CRNotifications.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CRNotifications.modulemap; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		92B9ED81EEE4C40B38978711722687B2 /* CRNotifications.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CRNotifications.modulemap; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97C6C6F62138883113B8138976DB3831 /* Pods-CRNotificationsExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CRNotificationsExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		99496B351F41B00E1A682B5EE39CC524 /* Pods-CRNotificationsExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CRNotificationsExample-resources.sh"; sourceTree = "<group>"; };
 		A2752BE51FE8EAE21AA6C2D737180030 /* ResourceBundle-CRNotifications-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CRNotifications-Info.plist"; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		B4DAF76AD88565B9A679A469A4FDF922 /* Pods-CRNotificationsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRNotificationsExample.release.xcconfig"; sourceTree = "<group>"; };
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C82AC89F2905AF9CD68C1FC9A17DAAC2 /* CRNotificationsMedia.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = CRNotificationsMedia.xcassets; path = CRNotifications/Assets/CRNotificationsMedia.xcassets; sourceTree = "<group>"; };
-		D22FF58ABCEE4768A39D470434ED56D4 /* Pods-CRNotificationsExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CRNotificationsExample.modulemap"; sourceTree = "<group>"; };
+		D22FF58ABCEE4768A39D470434ED56D4 /* Pods-CRNotificationsExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CRNotificationsExample.modulemap"; sourceTree = "<group>"; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		E0EB017FE68266E1C0CF4A83985A2999 /* CRNotifications.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CRNotifications.xcconfig; sourceTree = "<group>"; };
 		E3912B68C48820B2761C6465F2F535FB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 				1A1F759F5A535128FC0D9E195FEFB21F /* Resources */,
 				A7A504B55F7892B4024008B433EA6C5A /* Support Files */,
 			);
-			name = CRNotifications;
 			path = CRNotifications;
 			sourceTree = "<group>";
 		};
@@ -313,7 +312,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69BDD7F7DE50E174DF041EA0FD3293FD /* CRNotificationsMedia.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF6FD2871F6A56F9009CF338 /* CRNotificationsMedia.xcassets in Resources */,
 				FE7F9EB58D992A6F01477E82489761D0 /* CRNotifications.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
