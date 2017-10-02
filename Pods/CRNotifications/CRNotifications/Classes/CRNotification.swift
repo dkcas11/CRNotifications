@@ -32,8 +32,11 @@ class CRNotification: UIView {
 	}()
 	
 	init() {
-		let width = UIScreen.main.bounds.width * 0.9
-		let height = (65 / 337) * width
+		let deviceWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+        let width = UIDevice.current.userInterfaceIdiom == .phone ? deviceWidth * 0.9 :
+                                                                    deviceWidth * 0.5
+		let height = UIDevice.current.userInterfaceIdiom == .phone ? (65 / 337) * width :
+                                                                     (57 / 337) * width
 		super.init(frame: CGRect(x: 0, y: -height, width: width, height: height))
 		center.x = UIScreen.main.bounds.width/2
 		
@@ -76,7 +79,7 @@ class CRNotification: UIView {
 			])
 		
 		NSLayoutConstraint.activate([
-			messageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: -2),
+			messageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: -6),
 			messageView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
 			messageView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
 			messageView.bottomAnchor.constraint(equalTo: messageView.superview!.bottomAnchor, constant: -2)
@@ -121,7 +124,7 @@ class CRNotification: UIView {
 	/// Animates in the notification
 	func showNotification() {
 		UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.1, options: UIViewAnimationOptions(), animations: {
-			self.frame.origin.y = UIApplication.shared.statusBarFrame.height * 1.5
+			self.frame.origin.y = UIApplication.shared.statusBarFrame.height + 10
 		})
 	}
 	
