@@ -26,8 +26,8 @@ class CRNotification: UIView {
 		view.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightSemibold)
 		view.backgroundColor = .clear
 		view.textColor = .white
-		view.textContainerInset = UIEdgeInsets(top: -4, left: -5, bottom: 0, right: 0)
 		view.isUserInteractionEnabled = false
+		view.textContainerInset = UIEdgeInsets(top: 0, left: -5, bottom: 0, right: 0)
 		return view
 	}()
 	
