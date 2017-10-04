@@ -87,8 +87,16 @@ class CRNotification: UIView {
 	}
 	
 	func setupTargets() {
+		NotificationCenter.default.addObserver(self, selector: #selector(didRotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
 		let dismissRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissNotification))
 		addGestureRecognizer(dismissRecognizer)
+	}
+	
+	@objc func didRotate() {
+		UIView.animate(withDuration: 0.2) {
+			self.center.x = UIScreen.main.bounds.width/2
+			self.center.y = UIApplication.shared.statusBarFrame.height + 10 + self.frame.height/2
+		}
 	}
 	
 	/// Required init for nib loading (nib loading is not supported)
