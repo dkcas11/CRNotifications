@@ -28,15 +28,17 @@ class CRNotification: UIView {
 		view.textColor = .white
 		view.isUserInteractionEnabled = false
 		view.textContainerInset = UIEdgeInsets(top: 0, left: -5, bottom: 0, right: 0)
+        view.textContainer.lineBreakMode = .byWordWrapping
 		return view
 	}()
 	
 	init() {
 		let deviceWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
-        let width = UIDevice.current.userInterfaceIdiom == .phone ? deviceWidth * 0.9 :
-                                                                    deviceWidth * 0.5
-		let height = UIDevice.current.userInterfaceIdiom == .phone ? (65 / 337) * width :
-                                                                     (57 / 337) * width
+        let widthFactor: CGFloat = DeviceManager.value(iPhone35: 0.9, iPhone40: 0.9, iPhone47: 0.9, iPhone55: 0.85, iPhone58: 0.9, iPadSmall: 0.5, iPadMedium: 0.45, iPadBig: 0.4)
+        let heightFactor: CGFloat = DeviceManager.value(iPhone35: 0.2, iPhone40: 0.2, iPhone47: 0.2, iPhone55: 0.2, iPhone58: 0.2, iPadSmall: 0.18, iPadMedium: 0.17, iPadBig: 0.17)
+
+        let width = deviceWidth * widthFactor
+        let height = width * heightFactor
 		super.init(frame: CGRect(x: 0, y: -height, width: width, height: height))
 		center.x = UIScreen.main.bounds.width/2
 		
@@ -72,7 +74,7 @@ class CRNotification: UIView {
 			])
 		
 		NSLayoutConstraint.activate([
-			titleLabel.topAnchor.constraint(equalTo: titleLabel.superview!.topAnchor),
+            titleLabel.topAnchor.constraint(equalTo: titleLabel.superview!.topAnchor, constant: -2),
 			titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
 			titleLabel.trailingAnchor.constraint(equalTo: titleLabel.superview!.trailingAnchor, constant: -8),
 			titleLabel.bottomAnchor.constraint(equalTo: titleLabel.superview!.centerYAnchor, constant: -2)
@@ -82,7 +84,7 @@ class CRNotification: UIView {
 			messageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: -6),
 			messageView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
 			messageView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-			messageView.bottomAnchor.constraint(equalTo: messageView.superview!.bottomAnchor, constant: -2)
+			messageView.bottomAnchor.constraint(equalTo: messageView.superview!.bottomAnchor, constant: -4)
 			])
 	}
 	
