@@ -17,7 +17,9 @@ class ViewController: UIViewController {
 	
 	/// Test buttons
 	@IBAction func showSuccess(_ sender: Any) {
-        CRNotifications.showNotification(type: .success, title: "Success!", message: "You successfully showed this notification.", dismissDelay: 3)
+		CRNotifications.showNotification(type: .success, title: "Success!", message: "You successfully showed this notification.", dismissDelay: 3, completion: {
+			print("Successfully executed this print when the notification disappeared.")
+		})
 	}
 	
 	@IBAction func showError(_ sender: Any) {

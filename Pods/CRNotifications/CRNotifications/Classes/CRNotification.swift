@@ -31,6 +31,7 @@ class CRNotification: UIView {
         view.textContainer.lineBreakMode = .byWordWrapping
 		return view
 	}()
+	public var completion: () -> () = {}
 	
 	init() {
 		let deviceWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
@@ -124,6 +125,11 @@ class CRNotification: UIView {
 		imageView.image = image
 	}
 	
+	/// Sets the completion block of the notification for when it is dismissed
+	func setCompletionBlock(_ completion: @escaping () -> ()) {
+		self.completion = completion
+	}
+	
 	/// Dismisses the notification with a delay > 0
 	func setDismisTimer(delay: TimeInterval) {
 		if delay > 0 {
@@ -146,8 +152,9 @@ class CRNotification: UIView {
 			(complete: Bool) in
 			UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions(), animations: {
 				self.center.y = -self.frame.height
-			}, completion: { (complete) in
-				self.removeFromSuperview()
+			}, completion: { [weak self] (complete) in
+				self?.completion()
+				self?.removeFromSuperview()
 			})
 		})
 	}
