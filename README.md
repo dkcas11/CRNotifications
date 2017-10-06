@@ -16,7 +16,7 @@ CRNotifications are custom in-app notifications with 3 types of layouts. The not
 ### How to use
 -------
 
-Call ``CRNotifications.showNotification`` with a title, message, notification type and a time for how long the notification should appear. Should the notification not disappear automatically use a time of ``0``.
+Call ``CRNotifications.showNotification`` with a title, message, notification type and a time for how long the notification should appear. Should the notification not disappear automatically use a time of ``0``. You may also pass a completion block that is executed once the notification disappears.
 
 Notification types are :
 ```.success```
