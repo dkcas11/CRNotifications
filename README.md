@@ -35,7 +35,7 @@ CRNotifications.showNotification(type: .success, title: "Success!", message: "Yo
 #### Cocoapods install
 
 ```
-pod 'CRNotifications', :git => 'https://github.com/dkcas11/CRNotifications.git'
+pod 'CRNotifications', :git => 'https://github.com/dkcas11/CRNotifications.git', :branch => 'swift3'
 ```
 #### Manual install
 Drag the *CRNotifications* folder into your project and you are good to go.
