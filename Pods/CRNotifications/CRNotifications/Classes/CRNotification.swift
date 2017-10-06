@@ -17,13 +17,13 @@ class CRNotification: UIView {
 	}()
 	public fileprivate(set) lazy var titleLabel: UILabel = {
 		let label = UILabel()
-		label.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightBold)
+		label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.bold)
 		label.textColor = .white
 		return label
 	}()
 	public fileprivate(set) lazy var messageView: UITextView = {
 		let view = UITextView()
-		view.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightSemibold)
+		view.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.semibold)
 		view.backgroundColor = .clear
 		view.textColor = .white
 		view.isUserInteractionEnabled = false
@@ -145,7 +145,7 @@ class CRNotification: UIView {
 	}
 	
 	/// Animates out the notification
-	func dismissNotification() {
+	@objc func dismissNotification() {
 		UIView.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions(), animations: {
 			self.frame.origin.y = self.frame.origin.y + 5
 		}, completion: {

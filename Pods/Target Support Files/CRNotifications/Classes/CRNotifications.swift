@@ -13,7 +13,7 @@ public class CRNotifications {
     public init(){}
     
     /// Shows a CRNotification
-    public static func showNotification(type: CRNotificationType, title: String, message: String, dismissDelay: TimeInterval) {
+	public static func showNotification(type: CRNotificationType, title: String, message: String, dismissDelay: TimeInterval, completion: @escaping () -> () = {}) {
         let view = CRNotification()
         
         view.setBackgroundColor(color: type.color)
@@ -21,6 +21,7 @@ public class CRNotifications {
         view.setTitle(title: title)
         view.setMessage(message: message)
         view.setDismisTimer(delay: dismissDelay)
+		view.setCompletionBlock(completion)
         
         guard let window = UIApplication.shared.keyWindow else {
             print("Failed to show CRNotification. No keywindow available.")
