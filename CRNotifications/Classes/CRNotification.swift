@@ -93,6 +93,9 @@ class CRNotification: UIView {
 		NotificationCenter.default.addObserver(self, selector: #selector(didRotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
 		let dismissRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissNotification))
 		addGestureRecognizer(dismissRecognizer)
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.dismissNotification))
+        swipeRecognizer.direction = .up
+        addGestureRecognizer(swipeRecognizer)
 	}
 	
 	@objc func didRotate() {
