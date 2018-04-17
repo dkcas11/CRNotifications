@@ -99,8 +99,13 @@ internal class CRNotification: UIView {
 	
 	private func setupTargets() {
 		NotificationCenter.default.addObserver(self, selector: #selector(didRotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-		let dismissRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissNotification))
-		addGestureRecognizer(dismissRecognizer)
+		
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissNotification))
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.dismissNotification))
+        swipeRecognizer.direction = .up
+        
+        addGestureRecognizer(tapRecognizer)
+        addGestureRecognizer(swipeRecognizer)
 	}
     
     
