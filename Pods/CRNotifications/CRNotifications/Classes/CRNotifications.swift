@@ -21,6 +21,15 @@ public class CRNotifications {
     
     public init(){}
     
+    
+    // MARK: - Helpers
+    
+    /** Shows a CRNotification **/
+    public static func showNotification(textColor: UIColor, backgroundColor: UIColor, image: UIImage?, title: String, message: String, dismissDelay: TimeInterval, completion: @escaping () -> () = {}) {
+        let notificationDefinition = CRNotificationTypeDefinition(textColor: textColor, backgroundColor: backgroundColor, image: image)
+        showNotification(type: notificationDefinition, title: title, message: message, dismissDelay: dismissDelay, completion: completion)
+    }
+    
     /** Shows a CRNotification from a CRNotificationType **/
     public static func showNotification(type: CRNotificationType, title: String, message: String, dismissDelay: TimeInterval, completion: @escaping () -> () = {}) {
         let view = CRNotification()
