@@ -10,13 +10,23 @@ import UIKit
 
 public class CRNotifications {
     
+    // MARK: - Static notification types
+    
+    public static let success: CRNotificationType = CRNotificationTypeDefinition(textColor: UIColor.white, backgroundColor: UIColor.flatGreen, image: UIImage(named: "success", in: Bundle(for: CRNotifications.self), compatibleWith: nil))
+    public static let error: CRNotificationType = CRNotificationTypeDefinition(textColor: UIColor.white, backgroundColor: UIColor.flatRed, image: UIImage(named: "error", in: Bundle(for: CRNotifications.self), compatibleWith: nil))
+    public static let info: CRNotificationType = CRNotificationTypeDefinition(textColor: UIColor.white, backgroundColor: UIColor.flatGray, image: UIImage(named: "info", in: Bundle(for: CRNotifications.self), compatibleWith: nil))
+
+    
+    // MARK: - Init
+    
     public init(){}
     
-    /// Shows a CRNotification
-	public static func showNotification(type: CRNotificationType, title: String, message: String, dismissDelay: TimeInterval, completion: @escaping () -> () = {}) {
+    /** Shows a CRNotification from a CRNotificationType **/
+    public static func showNotification(type: CRNotificationType, title: String, message: String, dismissDelay: TimeInterval, completion: @escaping () -> () = {}) {
         let view = CRNotification()
         
-        view.setBackgroundColor(color: type.color)
+        view.setBackgroundColor(color: type.backgroundColor)
+        view.setTextColor(color: type.textColor)
         view.setImage(image: type.image)
         view.setTitle(title: title)
         view.setMessage(message: message)
@@ -27,7 +37,14 @@ public class CRNotifications {
             print("Failed to show CRNotification. No keywindow available.")
             return
         }
+        
         window.addSubview(view)
         view.showNotification()
     }
+}
+
+fileprivate struct CRNotificationTypeDefinition: CRNotificationType {
+    var textColor: UIColor
+    var backgroundColor: UIColor
+    var image: UIImage?
 }
