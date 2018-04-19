@@ -18,15 +18,28 @@ CRNotifications are custom in-app notifications with 3 types of layouts. The not
 
 Call ``CRNotifications.showNotification`` with a title, message, notification type and a time for how long the notification should appear. Should the notification not disappear automatically use a time of ``0``. You may also pass a completion block that is executed once the notification disappears.
 
-Notification types are :
+Built-in notification types are :
 ```.success```
 ```.error```
 ```.info```
 
-Example : 
+Example: 
 
+```swift
+CRNotifications.showNotification(type: CRNotifications.success, title: "Success!", message: "You successfully showed this notification.", dismissDelay: 3)
 ```
-CRNotifications.showNotification(type: .success, title: "Success!", message: "You successfully showed this notification.", dismissDelay: 3)
+
+It is also possible to customize the notifications and provide your own custom style either by the method 
+```swift
+showNotification(textColor:, backgroundColor: UIColor, image: UIImage?, title: String, message: String, dismissDelay: TimeInterval)
+```
+or by conforming to the ``CRNotificationType`` protocol:
+```swift
+protocol CRNotificationType {
+    var textColor: UIColor { get }
+    var backgroundColor: UIColor { get }
+    var image: UIImage? { get }
+}
 ```
 
 ### Installation
@@ -58,4 +71,3 @@ Drag the *CRNotifications* folder into your project and you are good to go.
 > Twitter : [estar2005](http://twitter.com/estar2005) <br/>
 > Github  : [Rico237](https://github.com/rico237) <br/>
 > Mail    : [wolbereric@yahoo.fr](mailto:wolbereric@yahoo.fr)
-

@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     
     @IBAction func showCustom(_ sender: Any) {
         let customNotification = CustomCRNotification(textColor: UIColor.green, backgroundColor: UIColor.brown, image: UIImage())
-        CRNotifications.showNotification(type: customNotification, title: "Did you know?", message: "This notification will dismiss itself in 3 seconds.", dismissDelay: 3)
+        CRNotifications.showNotification(type: customNotification, title: "Did you know?", message: "This notification is very long and resizes itself in order to fit the size of the view. These last words exceed the limit.", dismissDelay: 3)
     }
 	
 	@IBAction func nextViewControllerButton(_ sender: Any) {
