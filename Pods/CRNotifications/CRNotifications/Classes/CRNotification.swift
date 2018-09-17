@@ -9,22 +9,25 @@
 import UIKit
 
 internal class CRNotification: UIView {
-
-	private lazy var imageView: UIImageView = {
-		let view = UIImageView()
-		view.tintColor = .white
-		return view
-	}()
     
-	private lazy var titleLabel: UILabel = {
-		let label = UILabel()
-		label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.bold)
-		label.textColor = .white
-		return label
-	}()
-	
-    private lazy var messageLabel: UILabel = {
+    private let imageView: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.tintColor = .white
+        return view
+    }()
+    
+    private let titleLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.bold)
+        label.textColor = .white
+        return label
+    }()
+    
+    private let messageLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.semibold)
         label.textColor = .white
         label.numberOfLines = 2
@@ -45,61 +48,57 @@ internal class CRNotification: UIView {
 
         let width = deviceWidth * widthFactor
         let height = width * heightFactor
-		super.init(frame: CGRect(x: 0, y: -height, width: width, height: height))
-		center.x = UIScreen.main.bounds.width/2
-		
-		setupLayer()
-		setupSubviews()
-		setupConstraints()
-		setupTargets()
-	}
-	
+        super.init(frame: CGRect(x: 0, y: -height, width: width, height: height))
+        center.x = UIScreen.main.bounds.width/2
+        
+        setupLayer()
+        setupSubviews()
+        setupConstraints()
+        setupTargets()
+    }
+    
     
     // MARK: - Setup
     
-	private func setupLayer() {
-		layer.cornerRadius = 5
-		layer.shadowRadius = 5
-		layer.shadowOpacity = 0.25
-		layer.shadowColor = UIColor.lightGray.cgColor
-	}
-	
-	private func setupSubviews() {
-		addSubview(imageView)
-		addSubview(titleLabel)
-		addSubview(messageLabel)
-	}
-	
-	private func setupConstraints() {
-		imageView.translatesAutoresizingMaskIntoConstraints = false
-		messageLabel.translatesAutoresizingMaskIntoConstraints = false
-		titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-		NSLayoutConstraint.activate([
-			imageView.topAnchor.constraint(equalTo: imageView.superview!.topAnchor, constant: 12),
-			imageView.leadingAnchor.constraint(equalTo: imageView.superview!.leadingAnchor, constant: 12),
-			imageView.bottomAnchor.constraint(equalTo: imageView.superview!.bottomAnchor, constant: -12),
-			imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
+    private func setupLayer() {
+        layer.cornerRadius = 5
+        layer.shadowRadius = 5
+        layer.shadowOpacity = 0.25
+        layer.shadowColor = UIColor.lightGray.cgColor
+    }
+    
+    private func setupSubviews() {
+        addSubview(imageView)
+        addSubview(titleLabel)
+        addSubview(messageLabel)
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: imageView.superview!.topAnchor, constant: 12),
+            imageView.leadingAnchor.constraint(equalTo: imageView.superview!.leadingAnchor, constant: 12),
+            imageView.bottomAnchor.constraint(equalTo: imageView.superview!.bottomAnchor, constant: -12),
+            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
         ])
 		
 		NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(greaterThanOrEqualTo: titleLabel.superview!.topAnchor, constant: 6),
             titleLabel.topAnchor.constraint(lessThanOrEqualTo: titleLabel.superview!.topAnchor, constant: 2),
-			titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
-			titleLabel.trailingAnchor.constraint(equalTo: titleLabel.superview!.trailingAnchor, constant: -8)
+            titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
+            titleLabel.trailingAnchor.constraint(equalTo: titleLabel.superview!.trailingAnchor, constant: -8)
         ])
 		
 		NSLayoutConstraint.activate([
             messageLabel.topAnchor.constraint(lessThanOrEqualTo: titleLabel.bottomAnchor, constant: 3),
-			messageLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-			messageLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            messageLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            messageLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             messageLabel.bottomAnchor.constraint(lessThanOrEqualTo: messageLabel.superview!.bottomAnchor, constant: -4)
         ])
-	}
-	
-	private func setupTargets() {
-		NotificationCenter.default.addObserver(self, selector: #selector(didRotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-		
+    }
+    
+    private func setupTargets() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didRotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissNotification))
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.dismissNotification))
         swipeRecognizer.direction = .up
@@ -110,14 +109,14 @@ internal class CRNotification: UIView {
     
     
     // MARK: - Helpers
-	
-	@objc internal func didRotate() {
-		UIView.animate(withDuration: 0.2) {
-			self.center.x = UIScreen.main.bounds.width/2
-			self.center.y = UIApplication.shared.statusBarFrame.height + 10 + self.frame.height/2
-		}
-	}
-		
+    
+    @objc internal func didRotate() {
+        UIView.animate(withDuration: 0.2) {
+            self.center.x = UIScreen.main.bounds.width / 2
+            self.center.y = self.topInset() + 10 + self.frame.height / 2
+        }
+    }
+    
     /** Sets the background color of the notification **/
     internal func setBackgroundColor(color: UIColor) {
         backgroundColor = color
@@ -158,23 +157,37 @@ internal class CRNotification: UIView {
 	
 	/** Animates in the notification **/
 	internal func showNotification() {
-		UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.1, options: UIViewAnimationOptions(), animations: {
-			self.frame.origin.y = UIApplication.shared.statusBarFrame.height + 10
-		})
-	}
-	
-	/** Animates out the notification **/
-	@objc internal func dismissNotification() {
-		UIView.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions(), animations: {
-			self.frame.origin.y = self.frame.origin.y + 5
-		}, completion: {
-			(complete: Bool) in
-			UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions(), animations: {
-				self.center.y = -self.frame.height
-			}, completion: { [weak self] (complete) in
-				self?.completion()
-				self?.removeFromSuperview()
-			})
-		})
-	}
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.1, options: UIViewAnimationOptions(), animations: {
+            self.frame.origin.y = self.topInset() + 10
+        })
+    }
+    
+    /** Animates out the notification **/
+    @objc internal func dismissNotification() {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.frame.origin.y = self.frame.origin.y + 5
+        }, completion: {
+            (complete: Bool) in
+            UIView.animate(withDuration: 0.25, animations: {
+                self.center.y = -self.frame.height
+            }, completion: { [weak self] (complete) in
+                self?.completion()
+                self?.removeFromSuperview()
+            })
+        })
+    }
+    
+    private func topInset() -> CGFloat {
+        let iPhoneXInset: CGFloat
+        switch UIApplication.shared.statusBarOrientation {
+        case .landscapeLeft, .landscapeRight:
+            iPhoneXInset = 0
+        case .portrait, .portraitUpsideDown, .unknown:
+            iPhoneXInset = 44
+        }
+        
+        let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
+        return DeviceManager.value(iPhoneX: statusBarHeight == 0 ? iPhoneXInset : statusBarHeight, other: statusBarHeight)
+    }
+    
 }
