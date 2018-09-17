@@ -148,6 +148,10 @@ internal class DeviceManager {
         return value(iPhone35: iPhone, iPhone40: iPhone, iPhone47: iPhone, iPhone55: iPhone, iPhone58: iPhone, iPadSmall: iPad, iPadMedium: iPad, iPadBig: iPad)
     }
     
+    internal static func value<T>(iPhoneX: T, other: T) -> T {
+        return value(iPhone35: other, iPhone40: other, iPhone47: other, iPhone55: other, iPhone58: iPhoneX, iPadSmall: other, iPadMedium: other, iPadBig: other)
+    }
+    
 }
 
 

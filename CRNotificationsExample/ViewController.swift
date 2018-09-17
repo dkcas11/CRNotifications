@@ -11,10 +11,6 @@ import CRNotifications
 
 class ViewController: UIViewController {
     
-	override func viewDidLoad() {
-		super.viewDidLoad()
-	}
-	
 	/// Test buttons
 	@IBAction func showSuccess(_ sender: Any) {
 		CRNotifications.showNotification(type: CRNotifications.success, title: "Success!", message: "You successfully showed this notification.", dismissDelay: 3, completion: {
