@@ -79,8 +79,6 @@ internal class DeviceManager {
 		case CGSize(width: 621.0, height: 1104.0):
 			return .iPhone55
 		case CGSize(width: 562.5, height: 1218.0):
-			return .iPhone58
-		case CGSize(width: 384.0, height: 512.0):
 			return .iPadSmall
 		case CGSize(width: 768.0, height: 1024.0):
 			return .iPadSmall
@@ -161,7 +159,9 @@ internal enum Device {
 	case iPhone47
 	case iPhone55
 	case iPhone58
-	
+    case iPhone61
+    case iPhone65
+
 	case iPadSmall
 	case iPadMedium
 	case iPadBig
