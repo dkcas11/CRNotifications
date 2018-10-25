@@ -32,20 +32,20 @@ internal class CRNotification: UIView {
         label.textColor = .white
         label.numberOfLines = 2
         return label
-	}()
-	
+    }()
+    
     private var completion: () -> () = {}
     
     
     // MARK: - Init
-	
+    
     required internal init?(coder aDecoder:NSCoder) { fatalError("Not implemented.") }
     
-	internal init() {
-		let deviceWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+    internal init() {
+        let deviceWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
         let widthFactor: CGFloat = DeviceManager.value(iPhone35: 0.9, iPhone40: 0.9, iPhone47: 0.9, iPhone55: 0.85, iPhone58: 0.9, iPadSmall: 0.5, iPadMedium: 0.45, iPadBig: 0.4)
         let heightFactor: CGFloat = DeviceManager.value(iPhone35: 0.2, iPhone40: 0.2, iPhone47: 0.2, iPhone55: 0.2, iPhone58: 0.2, iPadSmall: 0.18, iPadMedium: 0.17, iPadBig: 0.17)
-
+        
         let width = deviceWidth * widthFactor
         let height = width * heightFactor
         super.init(frame: CGRect(x: 0, y: -height, width: width, height: height))
@@ -79,25 +79,25 @@ internal class CRNotification: UIView {
             imageView.leadingAnchor.constraint(equalTo: imageView.superview!.leadingAnchor, constant: 12),
             imageView.bottomAnchor.constraint(equalTo: imageView.superview!.bottomAnchor, constant: -12),
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
-        ])
-		
-		NSLayoutConstraint.activate([
+            ])
+        
+        NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(greaterThanOrEqualTo: titleLabel.superview!.topAnchor, constant: 6),
             titleLabel.topAnchor.constraint(lessThanOrEqualTo: titleLabel.superview!.topAnchor, constant: 2),
             titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: titleLabel.superview!.trailingAnchor, constant: -8)
-        ])
-		
-		NSLayoutConstraint.activate([
+            ])
+        
+        NSLayoutConstraint.activate([
             messageLabel.topAnchor.constraint(lessThanOrEqualTo: titleLabel.bottomAnchor, constant: 3),
             messageLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             messageLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             messageLabel.bottomAnchor.constraint(lessThanOrEqualTo: messageLabel.superview!.bottomAnchor, constant: -4)
-        ])
+            ])
     }
     
     private func setupTargets() {
-        NotificationCenter.default.addObserver(self, selector: #selector(didRotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didRotate), name: UIDevice.orientationDidChangeNotification, object: nil)
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissNotification))
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.dismissNotification))
@@ -105,7 +105,7 @@ internal class CRNotification: UIView {
         
         addGestureRecognizer(tapRecognizer)
         addGestureRecognizer(swipeRecognizer)
-	}
+    }
     
     
     // MARK: - Helpers
@@ -127,37 +127,37 @@ internal class CRNotification: UIView {
         titleLabel.textColor = color
         messageLabel.textColor = color
     }
-	
-	/** Sets the title of the notification **/
-	internal func setTitle(title: String) {
-		titleLabel.text = title
-	}
-	
-	/** Sets the message of the notification **/
-	internal func setMessage(message: String) {
-		messageLabel.text = message
-	}
-	
-	/** Sets the image of the notification **/
-	internal func setImage(image: UIImage?) {
-		imageView.image = image
-	}
-	
-	/** Sets the completion block of the notification for when it is dismissed **/
-	internal func setCompletionBlock(_ completion: @escaping () -> ()) {
-		self.completion = completion
-	}
-	
-	/** Dismisses the notification with a delay > 0 **/
-	internal func setDismisTimer(delay: TimeInterval) {
-		if delay > 0 {
-			Timer.scheduledTimer(timeInterval: Double(delay), target: self, selector: #selector(dismissNotification), userInfo: nil, repeats: false)
-		}
-	}
-	
-	/** Animates in the notification **/
-	internal func showNotification() {
-        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.1, options: UIViewAnimationOptions(), animations: {
+    
+    /** Sets the title of the notification **/
+    internal func setTitle(title: String) {
+        titleLabel.text = title
+    }
+    
+    /** Sets the message of the notification **/
+    internal func setMessage(message: String) {
+        messageLabel.text = message
+    }
+    
+    /** Sets the image of the notification **/
+    internal func setImage(image: UIImage?) {
+        imageView.image = image
+    }
+    
+    /** Sets the completion block of the notification for when it is dismissed **/
+    internal func setCompletionBlock(_ completion: @escaping () -> ()) {
+        self.completion = completion
+    }
+    
+    /** Dismisses the notification with a delay > 0 **/
+    internal func setDismisTimer(delay: TimeInterval) {
+        if delay > 0 {
+            Timer.scheduledTimer(timeInterval: Double(delay), target: self, selector: #selector(dismissNotification), userInfo: nil, repeats: false)
+        }
+    }
+    
+    /** Animates in the notification **/
+    internal func showNotification() {
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.1, options: UIView.AnimationOptions(), animations: {
             self.frame.origin.y = self.topInset() + 10
         })
     }
