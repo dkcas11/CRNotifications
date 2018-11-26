@@ -6,7 +6,7 @@
 //	LICENSE : MIT
 //
 
-import Foundation
+import UIKit
 
 /** Protocol for defining a CRNotification style **/
 public protocol CRNotificationType {

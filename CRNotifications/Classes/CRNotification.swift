@@ -20,7 +20,7 @@ internal class CRNotification: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.bold)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)//  UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
         label.textColor = .white
         return label
     }()
@@ -28,7 +28,7 @@ internal class CRNotification: UIView {
     private let messageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.semibold)
+        label.font = UIFont.preferredFont(forTextStyle: .subheadline) // UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.semibold)
         label.textColor = .white
         label.numberOfLines = 2
         return label
@@ -42,20 +42,19 @@ internal class CRNotification: UIView {
     required internal init?(coder aDecoder:NSCoder) { fatalError("Not implemented.") }
     
     internal init() {
-        let deviceWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+        let deviceWidth = min(UIApplication.shared.keyWindow?.bounds.size.width ?? 0, UIApplication.shared.keyWindow?.bounds.size.height ?? 0)
         
         let width = UIDevice.current.userInterfaceIdiom == .pad ? deviceWidth * 0.5 : deviceWidth * 0.9
-        let height: CGFloat = 70 // UIDevice.current.userInterfaceIdiom == .pad ? deviceWidth * 0.14 : deviceWidth * 0.16
+        let height: CGFloat = 75 // UIDevice.current.userInterfaceIdiom == .pad ? deviceWidth * 0.14 : deviceWidth * 0.16
         
         super.init(frame: CGRect(x: 0, y: -height, width: width, height: height))
-        center.x = UIScreen.main.bounds.width/2
+        center.x = (UIApplication.shared.keyWindow?.bounds.size.width ?? 0) / 2
         
         setupLayer()
         setupSubviews()
         setupConstraints()
         setupTargets()
     }
-    
     
     // MARK: - Setup
     
@@ -81,17 +80,16 @@ internal class CRNotification: UIView {
             ])
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(greaterThanOrEqualTo: titleLabel.superview!.topAnchor, constant: 8),
-            titleLabel.topAnchor.constraint(lessThanOrEqualTo: titleLabel.superview!.topAnchor, constant: 4),
+            titleLabel.topAnchor.constraint(equalTo: titleLabel.superview!.topAnchor, constant: 4),
             titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 12),
             titleLabel.trailingAnchor.constraint(equalTo: titleLabel.superview!.trailingAnchor, constant: -12)
             ])
         
         NSLayoutConstraint.activate([
-            messageLabel.topAnchor.constraint(lessThanOrEqualTo: titleLabel.bottomAnchor, constant: 4),
+            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0),
             messageLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             messageLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            messageLabel.bottomAnchor.constraint(lessThanOrEqualTo: messageLabel.superview!.bottomAnchor, constant: -4)
+            messageLabel.bottomAnchor.constraint(equalTo: messageLabel.superview!.bottomAnchor, constant: -8)
             ])
     }
     
@@ -190,3 +188,4 @@ internal class CRNotification: UIView {
     }
     
 }
+
