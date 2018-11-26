@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CRNotifications
 
 class PushViewController: UIViewController {
 	
