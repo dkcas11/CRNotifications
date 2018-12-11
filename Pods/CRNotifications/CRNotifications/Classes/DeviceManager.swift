@@ -46,6 +46,16 @@
 //  iPhone58
 //	1125x2436 (375x812)
 //  - iPhone X
+//  - iPhone XS
+//
+//  iPhone61
+//  828x1792 (414x896)
+//  - iPhone XR
+//
+//  iPhone 65
+//  1242x2688 (414x896)
+//  - iPhone XS Max
+//
 //
 //  ----------------------------------------------------
 //  Created by Casper Riboe on 21/07/2017.
@@ -78,8 +88,10 @@ internal class DeviceManager {
 			return .iPhone55
 		case CGSize(width: 621.0, height: 1104.0):
 			return .iPhone55
-		case CGSize(width: 562.5, height: 1218.0):
-			return .iPhone58
+        case CGSize(width: 562.5, height: 1218.0):
+            return .iPhone58
+        case CGSize(width: 414.0, height: 896.0):
+            return .iPhone61
 		case CGSize(width: 384.0, height: 512.0):
 			return .iPadSmall
 		case CGSize(width: 768.0, height: 1024.0):
@@ -94,7 +106,7 @@ internal class DeviceManager {
 	}
 	
 	/// Returns a value based on the current iPhone device.
-	internal static func value<T>(iPhone35: T, iPhone40: T, iPhone47: T, iPhone55: T, iPhone58: T) -> T {
+    internal static func value<T>(iPhone35: T, iPhone40: T, iPhone47: T, iPhone55: T, iPhone58: T, iPhone61: T) -> T {
 		switch device() {
 		case .iPhone35:
 			return iPhone35
@@ -104,6 +116,8 @@ internal class DeviceManager {
 			return iPhone47
 		case .iPhone55:
 			return iPhone55
+        case .iPhone61:
+            return iPhone61
 		default:
 			return iPhone58
 		}
@@ -122,7 +136,7 @@ internal class DeviceManager {
 	}
 	
 	/// Returns a value based on the current iPhone or iPad device.
-	internal static func value<T>(iPhone35: T, iPhone40: T, iPhone47: T, iPhone55: T, iPhone58: T, iPadSmall: T, iPadMedium: T, iPadBig: T) -> T {
+    internal static func value<T>(iPhone35: T, iPhone40: T, iPhone47: T, iPhone55: T, iPhone58: T, iPhone61: T, iPadSmall: T, iPadMedium: T, iPadBig: T) -> T {
 		switch device() {
 		case .iPhone35:
 			return iPhone35
@@ -134,22 +148,30 @@ internal class DeviceManager {
 			return iPhone55
 		case .iPhone58:
 			return iPhone58
+        case .iPhone61:
+            return iPhone61
 		case .iPadSmall:
 			return iPadSmall
 		case .iPadMedium:
 			return iPadMedium
+        case .iPadBig:
+            return iPadBig
 		default:
-			return iPadBig
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                return iPadBig
+            } else {
+                return iPhone55
+            }
 		}
 	}
     
     /// Returns a value based on the current iPhone or iPad device.
     internal static func value<T>(iPhone: T, iPad: T) -> T {
-        return value(iPhone35: iPhone, iPhone40: iPhone, iPhone47: iPhone, iPhone55: iPhone, iPhone58: iPhone, iPadSmall: iPad, iPadMedium: iPad, iPadBig: iPad)
+        return value(iPhone35: iPhone, iPhone40: iPhone, iPhone47: iPhone, iPhone55: iPhone, iPhone58: iPhone, iPhone61: iPhone, iPadSmall: iPad, iPadMedium: iPad, iPadBig: iPad)
     }
     
     internal static func value<T>(iPhoneX: T, other: T) -> T {
-        return value(iPhone35: other, iPhone40: other, iPhone47: other, iPhone55: other, iPhone58: iPhoneX, iPadSmall: other, iPadMedium: other, iPadBig: other)
+        return value(iPhone35: other, iPhone40: other, iPhone47: other, iPhone55: other, iPhone58: iPhoneX, iPhone61: iPhoneX, iPadSmall: other, iPadMedium: other, iPadBig: other)
     }
     
 }
@@ -161,6 +183,7 @@ internal enum Device {
 	case iPhone47
 	case iPhone55
 	case iPhone58
+    case iPhone61
 	
 	case iPadSmall
 	case iPadMedium

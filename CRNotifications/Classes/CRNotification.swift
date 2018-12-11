@@ -43,8 +43,8 @@ internal class CRNotification: UIView {
     
 	internal init() {
 		let deviceWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
-        let widthFactor: CGFloat = DeviceManager.value(iPhone35: 0.9, iPhone40: 0.9, iPhone47: 0.9, iPhone55: 0.85, iPhone58: 0.9, iPadSmall: 0.5, iPadMedium: 0.45, iPadBig: 0.4)
-        let heightFactor: CGFloat = DeviceManager.value(iPhone35: 0.2, iPhone40: 0.2, iPhone47: 0.2, iPhone55: 0.2, iPhone58: 0.2, iPadSmall: 0.18, iPadMedium: 0.17, iPadBig: 0.17)
+        let widthFactor: CGFloat = DeviceManager.value(iPhone35: 0.9, iPhone40: 0.9, iPhone47: 0.9, iPhone55: 0.85, iPhone58: 0.9, iPhone61: 0.9, iPadSmall: 0.5, iPadMedium: 0.45, iPadBig: 0.4)
+        let heightFactor: CGFloat = DeviceManager.value(iPhone35: 0.22, iPhone40: 0.22, iPhone47: 0.2, iPhone55: 0.2, iPhone58: 0.18, iPhone61: 0.18, iPadSmall: 0.18, iPadMedium: 0.17, iPadBig: 0.17)
 
         let width = deviceWidth * widthFactor
         let height = width * heightFactor
@@ -82,8 +82,8 @@ internal class CRNotification: UIView {
         ])
 		
 		NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(greaterThanOrEqualTo: titleLabel.superview!.topAnchor, constant: 6),
-            titleLabel.topAnchor.constraint(lessThanOrEqualTo: titleLabel.superview!.topAnchor, constant: 2),
+            titleLabel.topAnchor.constraint(lessThanOrEqualTo: titleLabel.superview!.topAnchor, constant: 6),
+            titleLabel.topAnchor.constraint(greaterThanOrEqualTo: titleLabel.superview!.topAnchor, constant: 2),
             titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: titleLabel.superview!.trailingAnchor, constant: -8)
         ])
@@ -97,8 +97,7 @@ internal class CRNotification: UIView {
     }
     
     private func setupTargets() {
-        NotificationCenter.default.addObserver(self, selector: #selector(didRotate), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(didRotate), name: UIDevice.orientationDidChangeNotification, object: nil)
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissNotification))
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.dismissNotification))
         swipeRecognizer.direction = .up
@@ -157,7 +156,7 @@ internal class CRNotification: UIView {
 	
 	/** Animates in the notification **/
 	internal func showNotification() {
-        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.1, options: UIViewAnimationOptions(), animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.1, options: UIView.AnimationOptions(), animations: {
             self.frame.origin.y = self.topInset() + 10
         })
     }
