@@ -15,7 +15,8 @@ CRNotifications are custom in-app notifications with 3 types of layouts. The not
   s.social_media_url = 'https://twitter.com/dkcas11'
 
   s.ios.deployment_target = '9.0'
-
+  s.swift_version = '4.2'
+  
   s.source_files = 'CRNotifications/Classes/**/*'
   s.resources    = "CRNotifications/Assets/*.xcassets"
 
