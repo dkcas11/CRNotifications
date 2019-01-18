@@ -8,7 +8,11 @@
 
 import UIKit
 
-internal class CRNotification: UIView {
+public protocol CRNotification {
+    func hide() -> Void
+}
+
+public class CRNotificationView: UIView, CRNotification {
     
     private let imageView: UIImageView = {
         let view = UIImageView()
@@ -20,7 +24,7 @@ internal class CRNotification: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.bold)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         label.textColor = .white
         return label
     }()
@@ -28,7 +32,7 @@ internal class CRNotification: UIView {
     private let messageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.semibold)
+        label.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         label.textColor = .white
         label.numberOfLines = 2
         return label
@@ -126,36 +130,36 @@ internal class CRNotification: UIView {
         titleLabel.textColor = color
         messageLabel.textColor = color
     }
-	
-	/** Sets the title of the notification **/
-	internal func setTitle(title: String) {
-		titleLabel.text = title
-	}
-	
-	/** Sets the message of the notification **/
-	internal func setMessage(message: String) {
-		messageLabel.text = message
-	}
-	
-	/** Sets the image of the notification **/
-	internal func setImage(image: UIImage?) {
-		imageView.image = image
-	}
-	
-	/** Sets the completion block of the notification for when it is dismissed **/
-	internal func setCompletionBlock(_ completion: @escaping () -> ()) {
-		self.completion = completion
-	}
-	
-	/** Dismisses the notification with a delay > 0 **/
-	internal func setDismisTimer(delay: TimeInterval) {
-		if delay > 0 {
-			Timer.scheduledTimer(timeInterval: Double(delay), target: self, selector: #selector(dismissNotification), userInfo: nil, repeats: false)
-		}
-	}
-	
-	/** Animates in the notification **/
-	internal func showNotification() {
+    
+    /** Sets the title of the notification **/
+    internal func setTitle(title: String) {
+        titleLabel.text = title
+    }
+    
+    /** Sets the message of the notification **/
+    internal func setMessage(message: String) {
+        messageLabel.text = message
+    }
+    
+    /** Sets the image of the notification **/
+    internal func setImage(image: UIImage?) {
+        imageView.image = image
+    }
+    
+    /** Sets the completion block of the notification for when it is dismissed **/
+    internal func setCompletionBlock(_ completion: @escaping () -> ()) {
+        self.completion = completion
+    }
+    
+    /** Dismisses the notification with a delay > 0 **/
+    internal func setDismisTimer(delay: TimeInterval) {
+        if delay > 0 {
+            Timer.scheduledTimer(timeInterval: Double(delay), target: self, selector: #selector(dismissNotification), userInfo: nil, repeats: false)
+        }
+    }
+    
+    /** Animates in the notification **/
+    internal func showNotification() {
         UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.1, options: UIView.AnimationOptions(), animations: {
             self.frame.origin.y = self.topInset() + 10
         })
@@ -163,17 +167,7 @@ internal class CRNotification: UIView {
     
     /** Animates out the notification **/
     @objc internal func dismissNotification() {
-        UIView.animate(withDuration: 0.1, animations: {
-            self.frame.origin.y = self.frame.origin.y + 5
-        }, completion: {
-            (complete: Bool) in
-            UIView.animate(withDuration: 0.25, animations: {
-                self.center.y = -self.frame.height
-            }, completion: { [weak self] (complete) in
-                self?.completion()
-                self?.removeFromSuperview()
-            })
-        })
+        hide()
     }
     
     private func topInset() -> CGFloat {
@@ -187,6 +181,23 @@ internal class CRNotification: UIView {
         
         let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
         return DeviceManager.value(iPhoneX: statusBarHeight == 0 ? iPhoneXInset : statusBarHeight, other: statusBarHeight)
+    }
+    
+    
+    // MARK: - Public
+    
+    public func hide() {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.frame.origin.y = self.frame.origin.y + 5
+        }, completion: {
+            (complete: Bool) in
+            UIView.animate(withDuration: 0.25, animations: {
+                self.center.y = -self.frame.height
+            }, completion: { [weak self] (complete) in
+                self?.completion()
+                self?.removeFromSuperview()
+            })
+        })
     }
     
 }
