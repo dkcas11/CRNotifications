@@ -86,17 +86,16 @@ public class CRNotificationView: UIView, CRNotification {
         ])
 		
 		NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(lessThanOrEqualTo: titleLabel.superview!.topAnchor, constant: 6),
-            titleLabel.topAnchor.constraint(greaterThanOrEqualTo: titleLabel.superview!.topAnchor, constant: 2),
+            titleLabel.topAnchor.constraint(lessThanOrEqualTo: titleLabel.superview!.topAnchor, constant: 8),
             titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: titleLabel.superview!.trailingAnchor, constant: -8)
         ])
 		
 		NSLayoutConstraint.activate([
-            messageLabel.topAnchor.constraint(lessThanOrEqualTo: titleLabel.bottomAnchor, constant: 3),
+            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
             messageLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             messageLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            messageLabel.bottomAnchor.constraint(lessThanOrEqualTo: messageLabel.superview!.bottomAnchor, constant: -4)
+            messageLabel.bottomAnchor.constraint(lessThanOrEqualTo: messageLabel.superview!.bottomAnchor, constant: -5)
         ])
     }
     
@@ -177,6 +176,8 @@ public class CRNotificationView: UIView, CRNotification {
             iPhoneXInset = 0
         case .portrait, .portraitUpsideDown, .unknown:
             iPhoneXInset = 44
+        @unknown default:
+            iPhoneXInset = 0
         }
         
         let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height

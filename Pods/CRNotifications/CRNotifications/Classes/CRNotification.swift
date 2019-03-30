@@ -176,6 +176,8 @@ public class CRNotificationView: UIView, CRNotification {
             iPhoneXInset = 0
         case .portrait, .portraitUpsideDown, .unknown:
             iPhoneXInset = 44
+        @unknown default:
+            iPhoneXInset = 0
         }
         
         let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
