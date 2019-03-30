@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CRNotifications'
-  s.version          = '1.1.7'
+  s.version          = '1.2.0'
   s.summary          = 'Custom in-app notifications.'
 
   s.description      = <<-DESC
@@ -15,7 +15,7 @@ CRNotifications are custom in-app notifications with 3 types of layouts. The not
   s.social_media_url = 'https://twitter.com/dkcas11'
 
   s.ios.deployment_target = '9.0'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
   
   s.source_files = 'CRNotifications/Classes/**/*'
   s.resources    = "CRNotifications/Assets/*.xcassets"
