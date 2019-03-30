@@ -47,9 +47,13 @@ protocol CRNotificationType {
 
 #### Cocoapods install
 
-##### Swift 4
+##### Swift 5
 ```
 pod 'CRNotifications'
+```
+##### Swift 4.2
+```
+pod 'CRNotifications', :git => 'https://github.com/dkcas11/CRNotifications.git', :branch => 'swift4-2'
 ```
 ##### Swift 3
 ```
