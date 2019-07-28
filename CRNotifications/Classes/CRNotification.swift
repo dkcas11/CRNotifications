@@ -39,7 +39,7 @@ public class CRNotificationView: UIView, CRNotification {
 	}()
 	
     private var completion: () -> () = {}
-    
+    public var onClickDelegate: CRNotificationDelegate?
     
     // MARK: - Init
 	
@@ -101,7 +101,7 @@ public class CRNotificationView: UIView, CRNotification {
     
     private func setupTargets() {
         NotificationCenter.default.addObserver(self, selector: #selector(didRotate), name: UIDevice.orientationDidChangeNotification, object: nil)
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissNotification))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissNotificationOnTap))
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.dismissNotification))
         swipeRecognizer.direction = .up
         
@@ -162,6 +162,15 @@ public class CRNotificationView: UIView, CRNotification {
         UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.1, options: UIView.AnimationOptions(), animations: {
             self.frame.origin.y = self.topInset() + 10
         })
+    }
+    
+    @objc internal func dismissNotificationOnTap() {
+        guard let onClickDelegate = onClickDelegate else {
+            self.dismissNotification()
+            return
+        }
+        onClickDelegate.onNotificationTap()
+        self.dismissNotification()
     }
     
     /** Animates out the notification **/
