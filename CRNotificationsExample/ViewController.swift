@@ -31,7 +31,11 @@ class ViewController: UIViewController {
         CRNotifications.showNotification(type: customNotification, title: "Did you know?", message: "This notification is very long and resizes itself in order to fit the size of the view. These last words exceed the limit.", dismissDelay: 3)
     }
 	
-	@IBAction func nextViewControllerButton(_ sender: Any) {
+    @IBAction func showWithOnTapFeature(_ sender: Any) {
+        CRNotifications.showNotification(type: CRNotifications.info, title: "Did you know?", message: "Tap on this notification to show another notification", dismissDelay: 3, delegate: self)
+    }
+    
+    @IBAction func nextViewControllerButton(_ sender: Any) {
 		navigationController?.pushViewController(PushViewController(), animated: true)
 	}
 }
@@ -42,3 +46,10 @@ fileprivate struct CustomCRNotification: CRNotificationType {
     var image: UIImage?
 }
 
+extension ViewController: CRNotificationDelegate {
+    func onNotificationTap() {
+        CRNotifications.showNotification(type: CRNotifications.success, title: "Success!", message: "You successfully tapped on the previous notification.", dismissDelay: 3, completion: {
+            print("Successfully executed this print when the notification disappeared.")
+        })
+    }
+}
