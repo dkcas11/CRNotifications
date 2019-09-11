@@ -47,8 +47,8 @@ fileprivate struct CustomCRNotification: CRNotificationType {
 }
 
 extension ViewController: CRNotificationDelegate {
-    func onNotificationTap() {
-        CRNotifications.showNotification(type: CRNotifications.success, title: "Success!", message: "You successfully tapped on the previous notification.", dismissDelay: 3, completion: {
+    func onNotificationTap(type: CRNotificationType, title: String?, message: String?) {
+        CRNotifications.showNotification(type: CRNotifications.success, title: "Success!", message: "You successfully tapped on the previous notification. Title was \(title ?? "no title")", dismissDelay: 3, completion: {
             print("Successfully executed this print when the notification disappeared.")
         })
     }
