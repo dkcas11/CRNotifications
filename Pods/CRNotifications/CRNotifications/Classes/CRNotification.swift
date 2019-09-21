@@ -39,26 +39,33 @@ public class CRNotificationView: UIView, CRNotification {
 	}()
 	
     private var completion: () -> () = {}
-    
+    private var type: CRNotificationType
+    public var delegate: CRNotificationDelegate?
     
     // MARK: - Init
 	
     required internal init?(coder aDecoder:NSCoder) { fatalError("Not implemented.") }
     
-	internal init() {
+    internal init(type: CRNotificationType) {
 		let deviceWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
         let widthFactor: CGFloat = DeviceManager.value(iPhone35: 0.9, iPhone40: 0.9, iPhone47: 0.9, iPhone55: 0.85, iPhone58: 0.9, iPhone61: 0.9, iPadSmall: 0.5, iPadMedium: 0.45, iPadBig: 0.4)
         let heightFactor: CGFloat = DeviceManager.value(iPhone35: 0.22, iPhone40: 0.22, iPhone47: 0.2, iPhone55: 0.2, iPhone58: 0.18, iPhone61: 0.18, iPadSmall: 0.18, iPadMedium: 0.17, iPadBig: 0.17)
 
         let width = deviceWidth * widthFactor
         let height = width * heightFactor
+        self.type = type
+        
         super.init(frame: CGRect(x: 0, y: -height, width: width, height: height))
         center.x = UIScreen.main.bounds.width/2
-        
         setupLayer()
         setupSubviews()
         setupConstraints()
         setupTargets()
+        
+        // setup type attributes
+        self.setBackgroundColor(color: type.backgroundColor)
+        self.setTextColor(color: type.textColor)
+        self.setImage(image: type.image)
     }
     
     
@@ -101,7 +108,7 @@ public class CRNotificationView: UIView, CRNotification {
     
     private func setupTargets() {
         NotificationCenter.default.addObserver(self, selector: #selector(didRotate), name: UIDevice.orientationDidChangeNotification, object: nil)
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissNotification))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissNotificationOnTap))
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.dismissNotification))
         swipeRecognizer.direction = .up
         
@@ -162,6 +169,11 @@ public class CRNotificationView: UIView, CRNotification {
         UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.68, initialSpringVelocity: 0.1, options: UIView.AnimationOptions(), animations: {
             self.frame.origin.y = self.topInset() + 10
         })
+    }
+    
+    @objc internal func dismissNotificationOnTap() {
+        delegate?.onNotificationTap(type: type,title: titleLabel.text, message: messageLabel.text)
+        self.dismissNotification()
     }
     
     /** Animates out the notification **/
