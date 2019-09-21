@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol CRNotificationDelegate {
-    func onNotificationTap()
+    func onNotificationTap(type: CRNotificationType, title: String?, message: String?)
 }
 
 public class CRNotifications {
@@ -42,16 +42,13 @@ public class CRNotifications {
      **/
     @discardableResult
     public static func showNotification(type: CRNotificationType, title: String, message: String, dismissDelay: TimeInterval, delegate: CRNotificationDelegate? = nil, completion: @escaping () -> () = {}) -> CRNotification? {
-        let view = CRNotificationView()
+        let view = CRNotificationView(type: type)
         
-        view.setBackgroundColor(color: type.backgroundColor)
-        view.setTextColor(color: type.textColor)
-        view.setImage(image: type.image)
         view.setTitle(title: title)
         view.setMessage(message: message)
         view.setDismisTimer(delay: dismissDelay)
 		view.setCompletionBlock(completion)
-        view.onClickDelegate = delegate
+        view.delegate = delegate
         
         guard let window = UIApplication.shared.keyWindow else {
             print("Failed to show CRNotification. No keywindow available.")

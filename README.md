@@ -9,7 +9,7 @@ CRNotifications are custom in-app notifications with 3 types of layouts. The not
 
 | Success | Error  |Info  |
 | --- | --- | --- |
-| ![alt text](http://i831.photobucket.com/albums/zz237/dkcas11/success.jpg "Success")  | ![alt text](http://i831.photobucket.com/albums/zz237/dkcas11/error.jpg "Error") |  ![alt text](http://i831.photobucket.com/albums/zz237/dkcas11/info.jpg "Info")|
+| ![alt text](cr-success.png "Success")  | ![alt text](cr-error.png "Error") |  ![alt text](cr-info.png "Info")|
 
 
 
