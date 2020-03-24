@@ -34,38 +34,42 @@ public class CRNotificationView: UIView, CRNotification {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         label.textColor = .white
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         return label
 	}()
+    
+    private lazy var labelsContainerStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 5.0
+        return stackView
+    }()
+    
 	
     private var completion: () -> () = {}
-    private var type: CRNotificationType
-    public var delegate: CRNotificationDelegate?
+    public var onClickDelegate: CRNotificationDelegate?
     
     // MARK: - Init
 	
     required internal init?(coder aDecoder:NSCoder) { fatalError("Not implemented.") }
     
-    internal init(type: CRNotificationType) {
+	internal init() {
 		let deviceWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
         let widthFactor: CGFloat = DeviceManager.value(iPhone35: 0.9, iPhone40: 0.9, iPhone47: 0.9, iPhone55: 0.85, iPhone58: 0.9, iPhone61: 0.9, iPadSmall: 0.5, iPadMedium: 0.45, iPadBig: 0.4)
         let heightFactor: CGFloat = DeviceManager.value(iPhone35: 0.22, iPhone40: 0.22, iPhone47: 0.2, iPhone55: 0.2, iPhone58: 0.18, iPhone61: 0.18, iPadSmall: 0.18, iPadMedium: 0.17, iPadBig: 0.17)
 
         let width = deviceWidth * widthFactor
         let height = width * heightFactor
-        self.type = type
-        
         super.init(frame: CGRect(x: 0, y: -height, width: width, height: height))
         center.x = UIScreen.main.bounds.width/2
+        
         setupLayer()
         setupSubviews()
         setupConstraints()
         setupTargets()
-        
-        // setup type attributes
-        self.setBackgroundColor(color: type.backgroundColor)
-        self.setTextColor(color: type.textColor)
-        self.setImage(image: type.image)
     }
     
     
@@ -79,9 +83,10 @@ public class CRNotificationView: UIView, CRNotification {
     }
     
     private func setupSubviews() {
+        labelsContainerStackView.addArrangedSubview(titleLabel)
+        labelsContainerStackView.addArrangedSubview(messageLabel)
         addSubview(imageView)
-        addSubview(titleLabel)
-        addSubview(messageLabel)
+        addSubview(labelsContainerStackView)
     }
     
     private func setupConstraints() {
@@ -92,17 +97,11 @@ public class CRNotificationView: UIView, CRNotification {
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
         ])
 		
-		NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(lessThanOrEqualTo: titleLabel.superview!.topAnchor, constant: 8),
-            titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
-            titleLabel.trailingAnchor.constraint(equalTo: titleLabel.superview!.trailingAnchor, constant: -8)
-        ])
-		
-		NSLayoutConstraint.activate([
-            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
-            messageLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            messageLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
-            messageLabel.bottomAnchor.constraint(lessThanOrEqualTo: messageLabel.superview!.bottomAnchor, constant: -5)
+        NSLayoutConstraint.activate([
+            labelsContainerStackView.centerYAnchor.constraint(equalTo: imageView.centerYAnchor, constant: 0),
+            labelsContainerStackView.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8),
+            labelsContainerStackView.trailingAnchor.constraint(equalTo: labelsContainerStackView.superview!.trailingAnchor, constant: -8),
+            labelsContainerStackView.bottomAnchor.constraint(equalTo: labelsContainerStackView.superview!.bottomAnchor, constant: -8)
         ])
     }
     
@@ -138,12 +137,12 @@ public class CRNotificationView: UIView, CRNotification {
     }
     
     /** Sets the title of the notification **/
-    internal func setTitle(title: String) {
+    internal func setTitle(title: String?) {
         titleLabel.text = title
     }
     
     /** Sets the message of the notification **/
-    internal func setMessage(message: String) {
+    internal func setMessage(message: String?) {
         messageLabel.text = message
     }
     
@@ -172,7 +171,11 @@ public class CRNotificationView: UIView, CRNotification {
     }
     
     @objc internal func dismissNotificationOnTap() {
-        delegate?.onNotificationTap(type: type,title: titleLabel.text, message: messageLabel.text)
+        guard let onClickDelegate = onClickDelegate else {
+            self.dismissNotification()
+            return
+        }
+        onClickDelegate.onNotificationTap()
         self.dismissNotification()
     }
     
