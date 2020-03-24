@@ -44,7 +44,7 @@ public class CRNotificationView: UIView, CRNotification {
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fillProportionally
-        stackView.spacing = 5.0
+        stackView.spacing = 0.0
         return stackView
     }()
     
